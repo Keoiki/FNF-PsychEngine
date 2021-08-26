@@ -30,6 +30,10 @@ class PauseSubState extends MusicBeatSubstate
 		super();
 		menuItems = menuItemsOG;
 
+		if (PlayState.SONG.song == 'Harmony') {
+			difficultyChoices = ['BACK'];
+		}
+
 		pauseMusic = new FlxSound().loadEmbedded(Paths.music('breakfast'), true, true);
 		pauseMusic.volume = 0;
 		pauseMusic.play(false, FlxG.random.int(0, Std.int(pauseMusic.length / 2)));

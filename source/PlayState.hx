@@ -866,47 +866,45 @@ class PlayState extends MusicBeatState
 				crystalPillars.active = false;
 				add(crystalPillars);
 
-				if (!ClientPrefs.lowQuality) {
-					crystalRed = new FlxSprite(-660, -750);
-					crystalRed.frames = Paths.getSparrowAtlas('temple/powerCrystalFire');
-					crystalRed.animation.addByPrefix('spin', 'Power Crystal Fire', 24, true);
-					crystalRed.animation.play('spin', false, FlxG.random.bool());
-					crystalRed.antialiasing = ClientPrefs.globalAntialiasing;
-					crystalRed.scrollFactor.set(0.95, 0.95);
-					add(crystalRed);
-					
-					crystalGreen = new FlxSprite(-115, -700);
-					crystalGreen.frames = Paths.getSparrowAtlas('temple/powerCrystalLeaf');
-					crystalGreen.animation.addByPrefix('spin', 'Power Crystal Leaf', 24, true);
-					crystalGreen.animation.play('spin', false, FlxG.random.bool());
-					crystalGreen.antialiasing = ClientPrefs.globalAntialiasing;
-					crystalGreen.scrollFactor.set(0.95, 0.95);
-					add(crystalGreen);
-					
-					crystalViolet = new FlxSprite(450, -650);
-					crystalViolet.frames = Paths.getSparrowAtlas('temple/powerCrystalStar');
-					crystalViolet.animation.addByPrefix('spin', 'Power Crystal Star', 24, true);
-					crystalViolet.animation.play('spin', false, FlxG.random.bool());
-					crystalViolet.antialiasing = ClientPrefs.globalAntialiasing;
-					crystalViolet.scrollFactor.set(0.95, 0.95);
-					add(crystalViolet);
-					
-					crystalYellow = new FlxSprite(1000, -700);
-					crystalYellow.frames = Paths.getSparrowAtlas('temple/powerCrystalEarth');
-					crystalYellow.animation.addByPrefix('spin', 'Power Crystal Earth', 24, true);
-					crystalYellow.animation.play('spin', false, FlxG.random.bool());
-					crystalYellow.antialiasing = ClientPrefs.globalAntialiasing;
-					crystalYellow.scrollFactor.set(0.95, 0.95);
-					add(crystalYellow);
-					
-					crystalBlue = new FlxSprite(1550, -750);
-					crystalBlue.frames = Paths.getSparrowAtlas('temple/powerCrystalWater');
-					crystalBlue.animation.addByPrefix('spin', 'Power Crystal Water', 24, true);
-					crystalBlue.animation.play('spin', false, FlxG.random.bool());
-					crystalBlue.antialiasing = ClientPrefs.globalAntialiasing;
-					crystalBlue.scrollFactor.set(0.95, 0.95);
-					add(crystalBlue);
-				}
+				crystalRed = new FlxSprite(-660, -750);
+				crystalRed.frames = Paths.getSparrowAtlas('temple/powerCrystalFire');
+				crystalRed.animation.addByPrefix('spin', 'Power Crystal Fire', 24, true);
+				crystalRed.animation.play('spin', false, FlxG.random.bool());
+				crystalRed.antialiasing = ClientPrefs.globalAntialiasing;
+				crystalRed.scrollFactor.set(0.95, 0.95);
+				add(crystalRed);
+				
+				crystalGreen = new FlxSprite(-115, -700);
+				crystalGreen.frames = Paths.getSparrowAtlas('temple/powerCrystalLeaf');
+				crystalGreen.animation.addByPrefix('spin', 'Power Crystal Leaf', 24, true);
+				crystalGreen.animation.play('spin', false, FlxG.random.bool());
+				crystalGreen.antialiasing = ClientPrefs.globalAntialiasing;
+				crystalGreen.scrollFactor.set(0.95, 0.95);
+				add(crystalGreen);
+				
+				crystalViolet = new FlxSprite(450, -650);
+				crystalViolet.frames = Paths.getSparrowAtlas('temple/powerCrystalStar');
+				crystalViolet.animation.addByPrefix('spin', 'Power Crystal Star', 24, true);
+				crystalViolet.animation.play('spin', false, FlxG.random.bool());
+				crystalViolet.antialiasing = ClientPrefs.globalAntialiasing;
+				crystalViolet.scrollFactor.set(0.95, 0.95);
+				add(crystalViolet);
+				
+				crystalYellow = new FlxSprite(1000, -700);
+				crystalYellow.frames = Paths.getSparrowAtlas('temple/powerCrystalEarth');
+				crystalYellow.animation.addByPrefix('spin', 'Power Crystal Earth', 24, true);
+				crystalYellow.animation.play('spin', false, FlxG.random.bool());
+				crystalYellow.antialiasing = ClientPrefs.globalAntialiasing;
+				crystalYellow.scrollFactor.set(0.95, 0.95);
+				add(crystalYellow);
+				
+				crystalBlue = new FlxSprite(1550, -750);
+				crystalBlue.frames = Paths.getSparrowAtlas('temple/powerCrystalWater');
+				crystalBlue.animation.addByPrefix('spin', 'Power Crystal Water', 24, true);
+				crystalBlue.animation.play('spin', false, FlxG.random.bool());
+				crystalBlue.antialiasing = ClientPrefs.globalAntialiasing;
+				crystalBlue.scrollFactor.set(0.95, 0.95);
+				add(crystalBlue);
 
 				bfDisc = new FlxSprite(1000, 200);
 				bfDisc.frames = Paths.getSparrowAtlas('arena/violastroDisc');
@@ -2629,17 +2627,6 @@ class PlayState extends MusicBeatState
 			boyfriend.y = bfDisc.getMidpoint().y - 440;
 		}
 
-		if (dad.curCharacter == 'venturers') {
-			if (cardinal.animation.curAnim.name.startsWith("sing") && cardinal.animation.curAnim.finished)
-				cardinal.holdTimer = 0;
-			if (pistachio.animation.curAnim.name.startsWith("sing") && pistachio.animation.curAnim.finished)
-				pistachio.holdTimer = 0;
-			if (azura.animation.curAnim.name.startsWith("sing") && azura.animation.curAnim.finished)
-				azura.holdTimer = 0;
-			if (banana.animation.curAnim.name.startsWith("sing") && banana.animation.curAnim.finished)
-				banana.holdTimer = 0;
-		}
-
 		// better streaming of shit
 
 		// RESET = Quick Game Over Screen
@@ -2834,12 +2821,16 @@ class PlayState extends MusicBeatState
 								switch (Math.abs(daNote.noteData)) {
 									case 0:
 										pistachio.playAnim('singLeaf' + daNote.vibrantNum, true);
+										pistachio.holdTimer = 0;
 									case 1:
 										banana.playAnim('singEarth' + daNote.vibrantNum, true);
+										banana.holdTimer = 0;
 									case 2:
 										cardinal.playAnim('singFire' + daNote.vibrantNum, true);
+										cardinal.holdTimer = 0;
 									case 3:
 										azura.playAnim('singWater' + daNote.vibrantNum, true);
+										azura.holdTimer = 0;
 								}
 							}
 
@@ -3139,14 +3130,15 @@ class PlayState extends MusicBeatState
 							FlxTween.tween(templePurple, {alpha: 0.885}, 2, {ease: FlxEase.quadInOut});
 							FlxTween.tween(templeDark, {alpha: 0.75}, 2, {ease: FlxEase.quadInOut});
 							FlxTween.tween(templeFogB, {alpha: 0.85}, 2, {ease: FlxEase.quadInOut});
-							//doFloodLights = true;
+							FlxTween.tween(templeLight, {alpha: 0.001}, 2, {ease: FlxEase.quadInOut});
+							doFloodLights = true;
 							//FlxTween.tween(stageDarkness, {alpha: 1}, 1, {ease: FlxEase.quadInOut});
 						} else {
 							FlxTween.tween(templeFogP, {alpha: 0.001}, 2, {ease: FlxEase.quadInOut});
 							FlxTween.tween(templePurple, {alpha: 0.001}, 2, {ease: FlxEase.quadInOut});
 							FlxTween.tween(templeDark, {alpha: 0.001}, 2, {ease: FlxEase.quadInOut});
 							FlxTween.tween(templeFogB, {alpha: 0.001}, 2, {ease: FlxEase.quadInOut});
-							//doFloodLights = false;
+							doFloodLights = false;
 							//FlxTween.tween(stageDarkness, {alpha: 0.001}, 1, {ease: FlxEase.quadInOut});
 						}
 					}
@@ -3995,7 +3987,11 @@ class PlayState extends MusicBeatState
 	{
 		if (!boyfriend.stunned)
 		{
-			health -= 0.04;
+			if (curSong == 'Supernova') {
+				health -= 0.02;
+			} else {
+				health -= 0.04;
+			}
 			if (combo > 5 && gf.animOffsets.exists('sad'))
 			{
 				gf.playAnim('sad');
@@ -4063,8 +4059,12 @@ class PlayState extends MusicBeatState
 
 	function fakeNoteHit(note:Note):Void
 	{
-		health -= 0.15;
-
+		if (curSong == 'Supernova') {
+			health -= 0.075;
+		} else {
+			health -= 0.15;
+		}
+		
 		if (curStage.startsWith('school')) {
 			boyfriend.playAnim('singDOWNmiss', true);
 		} else {
@@ -4442,7 +4442,7 @@ class PlayState extends MusicBeatState
 				}
 			
 			case 'temple': {
-				if (curBeat % 16 == 0) {
+				if ((curBeat % 16 == 0) && !doFloodLights) {
 					if (templeLight.alpha > 0.35) {
 						FlxTween.tween(templeLight, { alpha: 0.15 }, 6, { ease: FlxEase.smootherStepInOut });
 						//if (doFloodLights)
