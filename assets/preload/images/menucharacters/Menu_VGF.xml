@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Menu_VGF.png">
+	<!-- Created with Adobe Animate version 21.0.9.42677 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="M VGF Idle0000" x="0" y="0" width="283" height="340" frameX="-1" frameY="-5" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0001" x="288" y="0" width="285" height="340" frameX="0" frameY="-5" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0002" x="578" y="0" width="285" height="339" frameX="0" frameY="-6" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0003" x="868" y="0" width="283" height="339" frameX="-1" frameY="-6" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0004" x="1156" y="0" width="283" height="341" frameX="-1" frameY="-4" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0005" x="1444" y="0" width="283" height="341" frameX="-1" frameY="-4" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0006" x="1732" y="0" width="283" height="341" frameX="-1" frameY="-4" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0007" x="0" y="346" width="283" height="345" frameX="-1" frameY="0" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0008" x="288" y="346" width="283" height="345" frameX="-1" frameY="0" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0009" x="288" y="346" width="283" height="345" frameX="-1" frameY="0" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0010" x="576" y="346" width="283" height="345" frameX="-1" frameY="0" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0011" x="576" y="346" width="283" height="345" frameX="-1" frameY="0" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0012" x="576" y="346" width="283" height="345" frameX="-1" frameY="0" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0013" x="864" y="346" width="283" height="345" frameX="-1" frameY="0" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0014" x="864" y="346" width="283" height="345" frameX="-1" frameY="0" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0015" x="1152" y="346" width="283" height="341" frameX="-1" frameY="-4" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0016" x="1440" y="346" width="285" height="341" frameX="0" frameY="-4" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0017" x="1730" y="346" width="285" height="341" frameX="0" frameY="-4" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0018" x="0" y="696" width="283" height="341" frameX="-1" frameY="-4" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0019" x="288" y="696" width="283" height="341" frameX="-1" frameY="-4" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0020" x="576" y="696" width="283" height="341" frameX="-1" frameY="-4" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0021" x="864" y="696" width="283" height="341" frameX="-1" frameY="-4" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0022" x="1152" y="696" width="283" height="343" frameX="-1" frameY="-2" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0023" x="1440" y="696" width="283" height="343" frameX="-1" frameY="-2" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0024" x="1440" y="696" width="283" height="343" frameX="-1" frameY="-2" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0025" x="1728" y="696" width="283" height="343" frameX="-1" frameY="-2" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0026" x="1728" y="696" width="283" height="343" frameX="-1" frameY="-2" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0027" x="1728" y="696" width="283" height="343" frameX="-1" frameY="-2" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0028" x="0" y="1044" width="283" height="343" frameX="-1" frameY="-2" frameWidth="285" frameHeight="345"/>
+	<SubTexture name="M VGF Idle0029" x="0" y="1044" width="283" height="343" frameX="-1" frameY="-2" frameWidth="285" frameHeight="345"/>
+</TextureAtlas>

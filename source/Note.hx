@@ -183,6 +183,7 @@ class Note extends FlxSprite
 
 			x += width / 2;
 
+			noteType = prevNote.noteType;
 			vibrantNum = prevNote.vibrantNum;
 
 			switch (noteData)
@@ -244,14 +245,18 @@ class Note extends FlxSprite
 				}
 				updateHitbox();
 			}
+
+			if (noteType == 4) {
+				loadGraphic(Paths.image('greg'));
+				setGraphicSize(Std.int(width * 0.7));
+				antialiasing = ClientPrefs.globalAntialiasing;
+			}
 			done = true;
 		}
 
-		super.update(elapsed);
-
-		//if (isSustainNote && prevNote.noteType == 3) {
-		//	this.kill();
-		//}
+		if (isSustainNote && prevNote.noteType == 3) {
+			this.kill();
+		}
 
 		if (mustPress)
 		{
@@ -286,5 +291,7 @@ class Note extends FlxSprite
 			if (alpha > 0.3)
 				alpha = 0.3;
 		}
+
+		super.update(elapsed);
 	}
 }

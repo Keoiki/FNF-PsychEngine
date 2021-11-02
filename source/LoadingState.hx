@@ -153,8 +153,8 @@ class LoadingState extends MusicBeatState
 	
 	static function getNextState(target:FlxState, stopMusic = false):FlxState
 	{
-		if(PlayState.storyWeek == -99)
-			Paths.setCurrentLevel("violastro");
+		if(PlayState.storyWeek == 0)
+			Paths.setCurrentLevel("week2");
 		else
 			Paths.setCurrentLevel("week" + PlayState.storyWeek);
 

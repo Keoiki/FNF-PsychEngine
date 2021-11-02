@@ -30,7 +30,7 @@ class PauseSubState extends MusicBeatSubstate
 		super();
 		menuItems = menuItemsOG;
 
-		if (PlayState.SONG.song == 'Harmony') {
+		if (PlayState.storyWeek == 2) {
 			difficultyChoices = ['BACK'];
 		}
 

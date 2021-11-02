@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Menu_VBF.png">
+	<!-- Created with Adobe Animate version 21.0.9.42677 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="M VBF HEY0000" x="0" y="0" width="345" height="321" frameX="0" frameY="0" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0001" x="0" y="0" width="345" height="321" frameX="0" frameY="0" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0002" x="350" y="0" width="351" height="317" frameX="0" frameY="-6" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0003" x="350" y="0" width="351" height="317" frameX="0" frameY="-6" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0004" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0005" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0006" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0007" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0008" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0009" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0010" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0011" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0012" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0013" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0014" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0015" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0016" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0017" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0018" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0019" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0020" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0021" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0022" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0023" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0024" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF HEY0025" x="706" y="0" width="351" height="318" frameX="0" frameY="-5" frameWidth="351" frameHeight="323"/>
+	<SubTexture name="M VBF Idle0000" x="1062" y="0" width="363" height="303" frameX="-1" frameY="-16" frameWidth="364" frameHeight="319"/>
+	<SubTexture name="M VBF Idle0001" x="1062" y="0" width="363" height="303" frameX="-1" frameY="-16" frameWidth="364" frameHeight="319"/>
+	<SubTexture name="M VBF Idle0002" x="1430" y="0" width="360" height="304" frameX="0" frameY="-15" frameWidth="364" frameHeight="319"/>
+	<SubTexture name="M VBF Idle0003" x="1430" y="0" width="360" height="304" frameX="0" frameY="-15" frameWidth="364" frameHeight="319"/>
+	<SubTexture name="M VBF Idle0004" x="0" y="326" width="345" height="308" frameX="-2" frameY="-11" frameWidth="364" frameHeight="319"/>
+	<SubTexture name="M VBF Idle0005" x="0" y="326" width="345" height="308" frameX="-2" frameY="-11" frameWidth="364" frameHeight="319"/>
+	<SubTexture name="M VBF Idle0006" x="350" y="326" width="350" height="318" frameX="-1" frameY="-1" frameWidth="364" frameHeight="319"/>
+	<SubTexture name="M VBF Idle0007" x="350" y="326" width="350" height="318" frameX="-1" frameY="-1" frameWidth="364" frameHeight="319"/>
+	<SubTexture name="M VBF Idle0008" x="705" y="326" width="350" height="319" frameX="-1" frameY="0" frameWidth="364" frameHeight="319"/>
+	<SubTexture name="M VBF Idle0009" x="705" y="326" width="350" height="319" frameX="-1" frameY="0" frameWidth="364" frameHeight="319"/>
+	<SubTexture name="M VBF Idle0010" x="705" y="326" width="350" height="319" frameX="-1" frameY="0" frameWidth="364" frameHeight="319"/>
+	<SubTexture name="M VBF Idle0011" x="705" y="326" width="350" height="319" frameX="-1" frameY="0" frameWidth="364" frameHeight="319"/>
+	<SubTexture name="M VBF Idle0012" x="705" y="326" width="350" height="319" frameX="-1" frameY="0" frameWidth="364" frameHeight="319"/>
+	<SubTexture name="M VBF Idle0013" x="705" y="326" width="350" height="319" frameX="-1" frameY="0" frameWidth="364" frameHeight="319"/>
+</TextureAtlas>

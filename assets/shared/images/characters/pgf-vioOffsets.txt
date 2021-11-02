@@ -1,0 +1,6 @@
+idle 0 250
+idleHair 0 250
+singDOWN -60 100
+singRIGHT -200 250
+singLEFT 200 250
+singUP -60 400

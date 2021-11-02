@@ -1,1 +1,2 @@
-dance 0 0
+danceLeft 0 0
+danceRight 0 0

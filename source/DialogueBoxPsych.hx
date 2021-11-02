@@ -41,6 +41,7 @@ class DialogueBoxPsych extends FlxSpriteGroup
 				char.frames = Paths.getSparrowAtlas('dialogue/BF_Dialogue');
 				char.animation.addByPrefix('talkIdle', 'BFTalk', 24, true); //Dialogue ended
 				char.animation.addByPrefix('talk', 'bftalkloop', 24, true); //During dialogue
+				char.animation.play('talkIdle', true);
 				char.flipX = !char.flipX;
 
 			case 'psychic':
@@ -51,6 +52,7 @@ class DialogueBoxPsych extends FlxSpriteGroup
 				char.animation.addByPrefix('angry', 'PSY ANGRY loop', 24, true);
 				char.animation.addByPrefix('unamusedIdle', 'PSY unamused', 24, true);
 				char.animation.addByPrefix('unamused', 'PSY UNAMUSED loop', 24, true);
+				char.animation.play('talkIdle', true);
 				char.y -= 140;
 
 			case 'bf-vio':
@@ -96,7 +98,29 @@ class DialogueBoxPsych extends FlxSpriteGroup
 				char.animation.addByPrefix('talkIdle', 'Cardinal Talk Idle', 24, true);
 				char.animation.addByPrefix('talk', 'Cardinal Talk Loop', 24, true);
 				char.animation.play('talkIdle', true);
-				char.y -= 50;
+				char.y -= 75;
+			
+			case 'gf-vio':
+				char.frames = Paths.getSparrowAtlas('dialogue/GF-Vio_Dialogue');
+				char.animation.addByPrefix('talkIdle', 'GF Talk Idle', 24, true);
+				char.animation.addByPrefix('talk', 'GF Talk', 24, true);
+				char.animation.addByPrefix('winkIdle', 'GF Wink Idle', 24, true);
+				char.animation.addByPrefix('wink', 'GF Wink', 24, true);
+				char.animation.play('talkIdle', true);
+				char.flipX = !char.flipX;
+				char.y -= 175;
+
+			case 'viobot':
+				char.frames = Paths.getSparrowAtlas('dialogue/ViolastroBot_Dialogue');
+				char.animation.addByPrefix('talkIdle', 'VioBot Talk', 24, true);
+				char.animation.addByPrefix('talk', 'VioBot Talk', 24, true);
+				char.animation.addByPrefix('errorIdle', 'VioBot Error Idle', 24, true);
+				char.animation.addByPrefix('error', 'VioBot Error', 24, true);
+				char.animation.addByPrefix('errorContIdle', 'VioBot Error Idle', 24, true);
+				char.animation.addByPrefix('errorCont', 'VioBot Error Idle', 24, true);
+				char.animation.play('talkIdle', true);
+				char.flipX = !char.flipX;
+				char.y -= 325;
 		}
 		char.animation.play('talkIdle', true);
 	}
@@ -151,7 +175,11 @@ class DialogueBoxPsych extends FlxSpriteGroup
 			char.x += offsetPos;
 			addCharacter(char, splitName[0]);
 
-			char.setGraphicSize(Std.int(char.width * 0.9));
+			if (PlayState.storyWeek == 1) {
+				char.setGraphicSize(Std.int(char.width * 0.9));
+			} else {
+				char.setGraphicSize(Std.int(char.width * 0.7));
+			}
 			char.updateHitbox();
 			char.antialiasing = ClientPrefs.globalAntialiasing;
 			char.scrollFactor.set();

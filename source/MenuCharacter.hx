@@ -34,37 +34,22 @@ class MenuCharacter extends FlxSprite
 				frames = Paths.getSparrowAtlas('menucharacters/Menu_Dad');
 				animation.addByPrefix('idle', "M Dad Idle", 24);
 
-			case 'spooky':
-				frames = Paths.getSparrowAtlas('menucharacters/Menu_Spooky_Kids');
-				animation.addByPrefix('idle', "M Spooky Kids Idle", 24);
-
-			case 'pico':
-				frames = Paths.getSparrowAtlas('menucharacters/Menu_Pico');
-				animation.addByPrefix('idle', "M Pico Idle", 24);
-
-			case 'mom':
-				frames = Paths.getSparrowAtlas('menucharacters/Menu_Mom');
-				animation.addByPrefix('idle', "M Mom Idle", 24);
-
-			case 'parents-christmas':
-				frames = Paths.getSparrowAtlas('menucharacters/Menu_Parents');
-				animation.addByPrefix('idle', "M Parents Idle", 24);
-
-			case 'senpai':
-				frames = Paths.getSparrowAtlas('menucharacters/Menu_Senpai');
-				animation.addByPrefix('idle', "M Senpai Idle", 24);
-
 			case 'violastro':
 				frames = Paths.getSparrowAtlas('menucharacters/Menu_Violastro');
 				animation.addByPrefix('idle', 'M Violastro Idle', 24);
 
-			case 'tankman':
-				frames = Paths.getSparrowAtlas('menucharacters/Menu_Tankman');
-				animation.addByPrefix('idle', 'M Tankman Idle', 24);
+			case 'venturers':
+				frames = Paths.getSparrowAtlas('menucharacters/Menu_Venturers');
+				animation.addByPrefix('idle', 'M Venturers Idle', 24);
 
-			case 'psychic':
-				frames = Paths.getSparrowAtlas('menucharacters/Menu_Psychic');
-				animation.addByPrefix('idle', 'M Psychic Idle', 24);
+			case 'vio-bf':
+				frames = Paths.getSparrowAtlas('menucharacters/Menu_VBF');
+				animation.addByPrefix('idle', "M VBF Idle", 24);
+				animation.addByPrefix('confirm', 'M VBF HEY', 24, false);
+
+			case 'vio-gf':
+				frames = Paths.getSparrowAtlas('menucharacters/Menu_VGF');
+				animation.addByPrefix('idle', "M VGF Idle", 24);
 		}
 		animation.play('idle');
 		updateHitbox();
@@ -76,29 +61,17 @@ class MenuCharacter extends FlxSprite
 			case 'gf':
 				offset.set(-40, -25);
 
-			case 'spooky':
-				offset.set(0, -80);
-
-			case 'pico':
-				offset.set(0, -120);
-
-			case 'mom':
-				offset.set(0, 10);
-
-			case 'senpai':
-				offset.set(60, -70);
-
-			case 'parents-christmas':
-				offset.set(110, 10);
-
 			case 'violastro':
 				offset.set(60, 10);
 
-			case 'tankman':
-				offset.set(0, -100);
+			case 'venturers':
+				offset.set(80, -40);
+				
+			case 'vio-bf':
+				offset.set(20, -45);
 
-			case 'psychic':
-				offset.set(0, 10);
+			case 'vio-gf':
+				offset.set(-70, 0);
 		}
 	}
 }

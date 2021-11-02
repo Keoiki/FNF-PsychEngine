@@ -10,7 +10,7 @@ using StringTools;
 
 class CoolUtil
 {
-	public static var difficultyArray:Array<String> = ['EASY', "NORMAL", "HARD"];
+	public static var difficultyArray:Array<String> = ['EASY', "NORMAL", "HARD", "VIBRANT"];
 
 	public static function difficultyString():String
 	{

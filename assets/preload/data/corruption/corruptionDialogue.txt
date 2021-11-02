@@ -1,0 +1,7 @@
+cardinal:left viobot:center gf-vio:right
+:2:talk:0.05:normal:We're not just gonna let some\nhero-wannabe tweens stop us!
+:1:error:0.04:angry:ERROR\: NO TWEENS FOUND.
+:1:errorCont:0.06:angry:ONLY DETECTING FRAME-BY-FRAME\nLIFEFORMS IN THIS VICINITY.
+:2:wink:0.05:normal:
+:0:talk:0.075:normal:...What?
+:2:talk:0.05:normal:Oh nothing, carry on!

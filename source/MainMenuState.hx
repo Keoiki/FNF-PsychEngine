@@ -222,6 +222,11 @@ class MainMenuState extends MusicBeatState
 
 		super.update(elapsed);
 
+		if (FlxG.keys.justPressed.SEVEN) {
+			selectedSomethin = true;
+			MusicBeatState.switchState(new StoryBookState());
+		}
+
 		menuItems.forEach(function(spr:FlxSprite)
 		{
 			spr.screenCenter(X);

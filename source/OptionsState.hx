@@ -670,6 +670,7 @@ class PreferencesSubstate extends MusicBeatSubstate
 		unselectableOptions[1],
 		'Downscroll',
 		noCheckbox[1],
+		'Ghost Tapping',
 		'Note Splashes',
 		'Hide HUD',
 		'Flashing Lights',
@@ -827,6 +828,9 @@ class PreferencesSubstate extends MusicBeatSubstate
 						}
 						OptionsState.menuBG.antialiasing = ClientPrefs.globalAntialiasing;
 
+					case 'Ghost Tapping':
+						ClientPrefs.ghostTapping = !ClientPrefs.ghostTapping;
+
 					case 'Note Splashes':
 						ClientPrefs.noteSplashes = !ClientPrefs.noteSplashes;
 
@@ -920,6 +924,8 @@ class PreferencesSubstate extends MusicBeatSubstate
 				daText = "If unchecked, disables anti-aliasing, increases performance\nat the cost of the graphics not looking as smooth.";
 			case 'Downscroll':
 				daText = "If checked, notes go Down instead of Up, simple enough.";
+			case 'Ghost Tapping':
+				daText = "If checked, you won't get misses from pressing keys\nwhile there are no notes able to be hit.";
 			case 'Swearing':
 				daText = "If unchecked, your mom won't be angry at you.";
 			case 'Violence':
@@ -993,6 +999,8 @@ class PreferencesSubstate extends MusicBeatSubstate
 						daValue = ClientPrefs.lowQuality;
 					case 'Anti-Aliasing':
 						daValue = ClientPrefs.globalAntialiasing;
+					case 'Ghost Tapping':
+						daValue = ClientPrefs.ghostTapping;
 					case 'Note Splashes':
 						daValue = ClientPrefs.noteSplashes;
 					case 'Flashing Lights':

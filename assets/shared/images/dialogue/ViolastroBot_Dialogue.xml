@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="ViolastroBot_Dialogue.png">
+	<!-- Created with Adobe Animate version 21.0.9.42677 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="VioBot Error0000" x="0" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0001" x="1069" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0002" x="2138" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0003" x="1069" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0004" x="0" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0005" x="1069" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0006" x="3207" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0007" x="3207" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0008" x="4276" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0009" x="4276" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0010" x="5345" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0011" x="5345" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0012" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0013" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0014" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0015" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0016" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0017" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0018" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0019" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0020" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0021" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0022" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0023" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0024" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0025" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0026" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0027" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0028" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0029" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0030" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0031" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0032" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0033" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0034" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0035" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0036" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0037" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0038" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0039" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0040" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0041" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0042" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0043" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0044" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0045" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0046" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0047" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0048" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0049" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0050" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0051" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0052" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0053" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0054" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0055" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0056" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0057" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0058" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error0059" x="6414" y="0" width="1069" height="1104"/>
+	<SubTexture name="VioBot Error Idle0000" x="0" y="1104" width="1069" height="1104"/>
+	<SubTexture name="VioBot Talk0000" x="1069" y="1104" width="1069" height="1104"/>
+	<SubTexture name="VioBot Talk0001" x="2138" y="1104" width="1069" height="1104"/>
+	<SubTexture name="VioBot Talk0002" x="3207" y="1104" width="1069" height="1104"/>
+	<SubTexture name="VioBot Talk0003" x="2138" y="1104" width="1069" height="1104"/>
+</TextureAtlas>
