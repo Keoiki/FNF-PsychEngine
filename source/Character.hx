@@ -236,6 +236,33 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
+			case 'violastrobotPlayer':
+				frames = Paths.getSparrowAtlas('characters/violastrobot');
+				quickAnimAdd('idle', 'VioBot Idle');
+				animation.addByIndices('idleHair', 'VioBot Idle', [7, 8, 9, 10], "", 24, true);
+				
+				quickAnimAdd('singLEFT', 'VioBot Note Left');
+				animation.addByIndices('singLEFT-start', 'VioBot Note Left', [0, 1], "", 24, false);
+				animation.addByIndices('singLEFT-loop', 'VioBot Note Left', [2, 3, 4, 5], "", 24, false);
+
+				quickAnimAdd('singDOWN', 'VioBot Note Down');
+				animation.addByIndices('singDOWN-start', 'VioBot Note Down', [0, 1], "", 24, false);
+				animation.addByIndices('singDOWN-loop', 'VioBot Note Down', [2, 3, 4, 5], "", 24, false);
+
+				quickAnimAdd('singUP', 'VioBot Note Up');
+				animation.addByIndices('singUP-start', 'VioBot Note Up', [0, 1], "", 24, false);
+				animation.addByIndices('singUP-loop', 'VioBot Note Up', [2, 3, 4, 5], "", 24, false);
+
+				quickAnimAdd('singRIGHT', 'VioBot Note Right');
+				animation.addByIndices('singRIGHT-start', 'VioBot Note Right', [0, 1], "", 24, false);
+				animation.addByIndices('singRIGHT-loop', 'VioBot Note Right', [2, 3, 4, 5], "", 24, false);
+
+				quickAnimAdd('powerOut', 'VioBot Power Out');
+				quickAnimAdd('riseUp', 'VioBot Rise Up');
+
+				playAnim('idle');
+//				flipX = true;
+
 			case 'viobot-dancin':
 				frames = Paths.getSparrowAtlas('characters/violastrobot_dancin');
 				//animation.addByPrefix('idle', 'ViolastroBot Dance', 24, true);

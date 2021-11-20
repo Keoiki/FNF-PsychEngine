@@ -1,0 +1,16 @@
+singDOWN-loop 105 -30
+powerOut -107 -230
+singDOWN 104 -30
+singRIGHT-start 385 -15
+singUP 40 200
+singLEFT-loop -170 0
+singLEFT-start -170 0
+riseUp 178 -25
+singRIGHT-loop 355 -45
+idle 0 0
+singRIGHT -136 14
+singLEFT 350 0
+idleHair 0 0
+singDOWN-start 105 68
+singUP-loop 34 220
+singUP-start 34 220

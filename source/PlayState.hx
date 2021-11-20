@@ -1,5 +1,6 @@
 package;
 
+import openfl.display.ShaderInput;
 import haxe.iterators.StringIterator;
 import BlendModeEffect.BlendModeShader;
 import flixel.math.FlxRandom;
@@ -137,6 +138,7 @@ class PlayState extends MusicBeatState
 	private var healthBar:FlxBar;
 	private var healthBarMarker:FlxSprite;
 	private var healthBarCover:FlxSprite;
+	private var shieldIcon:FlxSprite;
 	var songPercent:Float = 0;
 	var shieldOn:Bool = false;
 	var shieldTimer:FlxPieDial;
@@ -202,6 +204,10 @@ class PlayState extends MusicBeatState
 	var emitter:FlxEmitter;
 	var emitter2:FlxEmitter;
 	var vines:FlxSprite;
+	var foregrObj:FlxSprite;
+	var leaves:FlxSprite;
+	var leavesShadow:FlxSprite;
+	var bfFly:FlxSprite;
 
 	var bgGirls:BackgroundGirls;
 	var wiggleShit:WiggleEffect = new WiggleEffect();
@@ -534,37 +540,37 @@ class PlayState extends MusicBeatState
 				// Particles End
 			}
 
-			case 'harmony' | 'corruption' | 'eclipse' | 'tutorial': {
+			case 'harmony' | 'tutorial': {
 				defaultCamZoom = 1.25;
 				//defaultCamZoom = 0.5125;
 				curStage = 'temple';
 
-				var bg:FlxSprite = new FlxSprite(-1300, -1375).loadGraphic(Paths.image('templeWall'));
+				var bg:FlxSprite = new FlxSprite(-1300, -1375).loadGraphic(Paths.image('harmony/templeWall'));
 				bg.antialiasing = ClientPrefs.globalAntialiasing;
 				bg.scrollFactor.set(0.95, 0.95);
 				bg.active = false;
 				add(bg);
 
-				var floor:FlxSprite = new FlxSprite(-1300, 300).loadGraphic(Paths.image('templeFloor'));
+				var floor:FlxSprite = new FlxSprite(-1300, 300).loadGraphic(Paths.image('harmony/templeFloor'));
 				floor.antialiasing = ClientPrefs.globalAntialiasing;
 				floor.scrollFactor.set(0.95, 0.95);
 				floor.active = false;
 				add(floor);
 
-				var backPillars:FlxSprite = new FlxSprite(-1125, -1250).loadGraphic(Paths.image('templeBack'));
+				var backPillars:FlxSprite = new FlxSprite(-1125, -1250).loadGraphic(Paths.image('harmony/templeBack'));
 				backPillars.antialiasing = ClientPrefs.globalAntialiasing;
 				backPillars.scrollFactor.set(0.9, 0.9);
 				backPillars.active = false;
 				add(backPillars);
 
-				var crystalPillars:FlxSprite = new FlxSprite(-500, -200).loadGraphic(Paths.image('templePillars'));
+				var crystalPillars:FlxSprite = new FlxSprite(-500, -200).loadGraphic(Paths.image('harmony/templePillars'));
 				crystalPillars.antialiasing = ClientPrefs.globalAntialiasing;
 				crystalPillars.scrollFactor.set(0.95, 0.95);
 				crystalPillars.active = false;
 				add(crystalPillars);
 
 				crystalRed = new FlxSprite(-660, -775);
-				crystalRed.frames = Paths.getSparrowAtlas('powerCrystalFire');
+				crystalRed.frames = Paths.getSparrowAtlas('harmony/powerCrystalFire');
 				crystalRed.animation.addByPrefix('spin', 'Power Crystal Fire', 24, true);
 				crystalRed.animation.play('spin', false, FlxG.random.bool());
 				crystalRed.antialiasing = ClientPrefs.globalAntialiasing;
@@ -572,7 +578,7 @@ class PlayState extends MusicBeatState
 				add(crystalRed);
 				
 				crystalGreen = new FlxSprite(-115, -725);
-				crystalGreen.frames = Paths.getSparrowAtlas('powerCrystalLeaf');
+				crystalGreen.frames = Paths.getSparrowAtlas('harmony/powerCrystalLeaf');
 				crystalGreen.animation.addByPrefix('spin', 'Power Crystal Leaf', 24, true);
 				crystalGreen.animation.play('spin', false, FlxG.random.bool());
 				crystalGreen.antialiasing = ClientPrefs.globalAntialiasing;
@@ -580,7 +586,7 @@ class PlayState extends MusicBeatState
 				add(crystalGreen);
 				
 				crystalViolet = new FlxSprite(450, -675);
-				crystalViolet.frames = Paths.getSparrowAtlas('powerCrystalStar');
+				crystalViolet.frames = Paths.getSparrowAtlas('harmony/powerCrystalStar');
 				crystalViolet.animation.addByPrefix('spin', 'Power Crystal Star', 24, true);
 				crystalViolet.animation.play('spin', false, FlxG.random.bool());
 				crystalViolet.antialiasing = ClientPrefs.globalAntialiasing;
@@ -588,7 +594,7 @@ class PlayState extends MusicBeatState
 				add(crystalViolet);
 				
 				crystalYellow = new FlxSprite(1000, -725);
-				crystalYellow.frames = Paths.getSparrowAtlas('powerCrystalEarth');
+				crystalYellow.frames = Paths.getSparrowAtlas('harmony/powerCrystalEarth');
 				crystalYellow.animation.addByPrefix('spin', 'Power Crystal Earth', 24, true);
 				crystalYellow.animation.play('spin', false, FlxG.random.bool());
 				crystalYellow.antialiasing = ClientPrefs.globalAntialiasing;
@@ -596,7 +602,7 @@ class PlayState extends MusicBeatState
 				add(crystalYellow);
 				
 				crystalBlue = new FlxSprite(1550, -775);
-				crystalBlue.frames = Paths.getSparrowAtlas('powerCrystalWater');
+				crystalBlue.frames = Paths.getSparrowAtlas('harmony/powerCrystalWater');
 				crystalBlue.animation.addByPrefix('spin', 'Power Crystal Water', 24, true);
 				crystalBlue.animation.play('spin', false, FlxG.random.bool());
 				crystalBlue.antialiasing = ClientPrefs.globalAntialiasing;
@@ -650,7 +656,7 @@ class PlayState extends MusicBeatState
 
 				// Temple Darkness
 
-				vines = new FlxSprite(-1400, -1575).loadGraphic(Paths.image('templeVines'));
+				vines = new FlxSprite(-1400, -1575).loadGraphic(Paths.image('harmony/templeVines'));
 				vines.antialiasing = ClientPrefs.globalAntialiasing;
 				vines.scrollFactor.set(1.5, 2);
 				vines.active = false;
@@ -712,17 +718,171 @@ class PlayState extends MusicBeatState
 				// Temple Darkness End
 			}
 
-			/*
+			
 			case 'corruption': {
-				defaultCamZoom = 0.525;
+				defaultCamZoom = 0.45;
 				curStage = 'sparklestone';
+
+				var bg:FlxSprite = new FlxSprite(-1302, -739).loadGraphic(Paths.image('corruption/dark sky'));
+				bg.antialiasing = ClientPrefs.globalAntialiasing;
+				bg.scrollFactor.set(0, 0);
+				bg.active = false;
+				bg.setGraphicSize(Std.int(bg.width * 1.5), Std.int(bg.height));
+				add(bg);
+
+				var clouds:FlxSprite = new FlxSprite(-1117, -816).loadGraphic(Paths.image('corruption/clouds'));
+				clouds.antialiasing = ClientPrefs.globalAntialiasing;
+				clouds.scrollFactor.set(0.2, 0.2);
+				clouds.active = false;
+				add(clouds);
+
+				var ocean01:FlxSprite = new FlxSprite(-1146, 250).loadGraphic(Paths.image('corruption/ocean 01'));
+				ocean01.antialiasing = ClientPrefs.globalAntialiasing;
+				ocean01.scrollFactor.set(0.45, 0.45);
+				ocean01.active = false;
+				add(ocean01);
+
+				bfFly = new FlxSprite(0, 0);
+				bfFly.frames = Paths.getSparrowAtlas('corruption/BF flying');
+				bfFly.animation.addByPrefix('fly', 'BF flying', 24, true);
+				bfFly.animation.play('fly');
+				bfFly.scrollFactor.set(0.35, 0.35);
+				bfFly.antialiasing = ClientPrefs.globalAntialiasing;
+				add(bfFly);
+
+				var ocean02:FlxSprite = new FlxSprite(-1246, 691).loadGraphic(Paths.image('corruption/ocean 02'));
+				ocean02.antialiasing = ClientPrefs.globalAntialiasing;
+				ocean02.scrollFactor.set(0.65, 0.65);
+				ocean02.active = false;
+				add(ocean02);
+
+				var land:FlxSprite = new FlxSprite(-1389, -293).loadGraphic(Paths.image('corruption/bg land 01'));
+				land.antialiasing = ClientPrefs.globalAntialiasing;
+				land.scrollFactor.set(0.8, 0.8);
+				land.active = false;
+				add(land);
+
+				var ground:FlxSprite = new FlxSprite(-672, 1375).loadGraphic(Paths.image('corruption/beach'));
+				ground.antialiasing = ClientPrefs.globalAntialiasing;
+				ground.scrollFactor.set(0.95, 0.95);
+				ground.active = false;
+				add(ground);
+
+				var cacti01:FlxSprite = new FlxSprite(-370, 923).loadGraphic(Paths.image('corruption/cacti back'));
+				cacti01.antialiasing = ClientPrefs.globalAntialiasing;
+				cacti01.scrollFactor.set(0.9, 0.9);
+				cacti01.active = false;
+				add(cacti01);
+
+				var cacti02:FlxSprite = new FlxSprite(-144, 1919).loadGraphic(Paths.image('corruption/cacti front'));
+				cacti02.antialiasing = ClientPrefs.globalAntialiasing;
+				cacti02.scrollFactor.set(1.1, 1.1);
+				cacti02.active = false;
+				add(cacti02);
 			}
 
 			case 'eclipse': {
-				defaultCamZoom = 0.575;
+				defaultCamZoom = 0.8;
 				curStage = 'foreverfall';
+
+				var bg:FlxSprite = new FlxSprite(-885, -1227).loadGraphic(Paths.image('eclipse/sky'));
+				bg.antialiasing = ClientPrefs.globalAntialiasing;
+				bg.scrollFactor.set(0, 0);
+				bg.active = false;
+				bg.setGraphicSize(Std.int(bg.width * 1.5), Std.int(bg.height));
+				add(bg);
+
+				var woods02:FlxSprite = new FlxSprite(-800, -1836).loadGraphic(Paths.image('eclipse/deep woods 02'));
+				woods02.antialiasing = ClientPrefs.globalAntialiasing;
+				woods02.scrollFactor.set(0.35, 0.35);
+				woods02.active = false;
+				add(woods02);
+
+				var woods01:FlxSprite = new FlxSprite(-447, -1168).loadGraphic(Paths.image('eclipse/deep woods 01'));
+				woods01.antialiasing = ClientPrefs.globalAntialiasing;
+				woods01.scrollFactor.set(0.55, 0.55);
+				woods01.active = false;
+				add(woods01);
+
+				var rocks:FlxSprite = new FlxSprite(198, 398).loadGraphic(Paths.image('eclipse/behind ground'));
+				rocks.antialiasing = ClientPrefs.globalAntialiasing;
+				rocks.scrollFactor.set(0.85, 0.85);
+				rocks.active = false;
+				add(rocks);
+
+				var ground:FlxSprite = new FlxSprite(-900, 512).loadGraphic(Paths.image('eclipse/ground'));
+				ground.antialiasing = ClientPrefs.globalAntialiasing;
+				ground.scrollFactor.set(0.95, 0.95);
+				ground.active = false;
+				add(ground);
+
+				var bgObj:FlxSprite = new FlxSprite(-573, -685).loadGraphic(Paths.image('eclipse/background objects'));
+				bgObj.antialiasing = ClientPrefs.globalAntialiasing;
+				bgObj.scrollFactor.set(1, 1);
+				bgObj.active = false;
+				add(bgObj);
+
+				bfDisc = new FlxSprite(1899, 804);
+				bfDisc.frames = Paths.getSparrowAtlas('violastroDisc');
+				bfDisc.animation.addByPrefix('spin', 'discSpin', 24, true);
+				bfDisc.animation.play('spin');
+				bfDisc.antialiasing = ClientPrefs.globalAntialiasing;
+				add(bfDisc);
+
+				// Particles
+
+				emitter = new FlxEmitter(bg.x + 1000, bg.y);
+				for (i in 0...1000) {
+					var p = new FlxParticle();
+					p.makeGraphic(15, 150, 0xFFFFFFFF);
+					p.exists = false;
+					emitter.add(p);
+				}
+				emitter.launchMode = FlxEmitterMode.SQUARE;
+				emitter.setSize(4000, 4000);
+				emitter.velocity.start.min.x = -2500;
+				emitter.velocity.start.max.x = -5000;
+				emitter.velocity.start.min.y = 2500;
+				emitter.velocity.start.max.y = 5000;
+				emitter.alpha.set(1, 1, 1, 0.5);
+				emitter.color.set(0xFF00A7ED, 0xFF00A7ED, 0xFF00A7ED, 0xFF00A7ED);
+				emitter.angle.set(45, 45, 45, 45);
+				emitter.scale.set(0.1, 0.5, 0.5, 1, 0, 0, 0, 0);
+				emitter.blend = BlendMode.ADD;
+				emitter.start(false, 0.0025);
+
+				foregrObj = new FlxSprite(-127, 65).loadGraphic(Paths.image('eclipse/foreground objects'));
+				foregrObj.antialiasing = ClientPrefs.globalAntialiasing;
+				foregrObj.scrollFactor.set(1.35, 1.15);
+				foregrObj.active = false;
+
+				leavesShadow = new FlxSprite(-600, -700).loadGraphic(Paths.image('eclipse/large shadow'));
+				leavesShadow.antialiasing = ClientPrefs.globalAntialiasing;
+				leavesShadow.scrollFactor.set(1.35, 1.15);
+				leavesShadow.blend = BlendMode.SUBTRACT;
+				leavesShadow.active = false;
+				leavesShadow.alpha = 0.55;
+
+				leaves = new FlxSprite(-800, -840).loadGraphic(Paths.image('eclipse/TOP leaves'));
+				leaves.antialiasing = ClientPrefs.globalAntialiasing;
+				leaves.scrollFactor.set(1.35, 1.15);
+				leaves.active = false;
+
+				templeDark = new FlxSprite(bg.x + 600, bg.y + 600).loadGraphic(Paths.image('templeDarkness'));
+				templeDark.antialiasing = ClientPrefs.globalAntialiasing;
+				templeDark.setGraphicSize(Std.int(templeDark.width * 1.5), Std.int(templeDark.height * 1.2));
+				templeDark.scrollFactor.set(1.4, 1.65);
+				templeDark.blend = BlendMode.OVERLAY;
+				templeDark.alpha = 0.85;
+
+				templeFogB = new FlxSprite(bg.x + 600, bg.y + 600).loadGraphic(Paths.image('templeBlackFog'));
+				templeFogB.antialiasing = ClientPrefs.globalAntialiasing;
+				templeFogB.setGraphicSize(Std.int(templeFogB.width * 1.5), Std.int(templeFogB.height * 1.2));
+				templeFogB.scrollFactor.set(1.5, 1.75);
+				templeFogB.blend = BlendMode.OVERLAY;
+				templeFogB.alpha = 0.95;
 			}
-			*/
+			
 
 			default:
 				defaultCamZoom = 0.9;
@@ -858,7 +1018,7 @@ class PlayState extends MusicBeatState
 			boyfriend = new Boyfriend(770, 450, 'bf-vio');
 			girlfriend = new Boyfriend(1070, 350, 'pgf-vio');
 		} else if (SONG.player1 == 'duo-viobotgf') {
-			boyfriend = new Boyfriend(770, -50, 'violastrobot');
+			boyfriend = new Boyfriend(770, -50, 'violastrobotPlayer');
 			girlfriend = new Boyfriend(1120, 350, 'pgf-vio');
 		} else {
 			boyfriend = new Boyfriend(770, 450, SONG.player1);
@@ -907,6 +1067,31 @@ class PlayState extends MusicBeatState
 				}
 				dad.y -= 70;
 			}
+
+			case 'sparklestone': {
+				dad.y += 950;
+				dad.x += 600;
+				boyfriend.x += 1200;
+				boyfriend.y += 800;
+				girlfriend.x += 1200;
+				girlfriend.y += 700;
+
+				gf.x = dad.x + (boyfriend.x - dad.x) - 600;
+				gf.y = dad.y;
+				
+				camPos.set(gf.getMidpoint().x, gf.getMidpoint().y);
+			}
+
+			case 'foreverfall': {
+				dad.x += 800;
+				dad.y += 625;
+				girlfriend.x = bfDisc.x + 450;
+				girlfriend.y = bfDisc.y + 100;
+				gf.x += 800;
+				gf.y += 400;
+				
+				camPos.set(gf.getMidpoint().x, gf.getMidpoint().y);
+			}
 		}
 
 		add(gf);
@@ -942,6 +1127,10 @@ class PlayState extends MusicBeatState
 		harmonyWhite = new FlxSprite(-1000, -750).makeGraphic(FlxG.width * 3, FlxG.height * 3, color);
 		harmonyWhite.scrollFactor.set();
 
+		halloweenWhite = new FlxSprite(-1000, -750).makeGraphic(FlxG.width * 8, FlxG.height * 8, FlxColor.WHITE);
+		halloweenWhite.scrollFactor.set();
+		halloweenWhite.alpha = 0.001;
+
 		if (dad.curCharacter == 'venturers') {
 			cardinal.x = dad.x;
 			cardinal.y = dad.y - 10;
@@ -957,6 +1146,7 @@ class PlayState extends MusicBeatState
 		if (curStage == 'limo')
 			add(limo);
 		
+/*
 		if (SONG.song == 'Corruption') {
 			add(bfDisc);
 			bfDisc.x -= 3000;
@@ -965,6 +1155,7 @@ class PlayState extends MusicBeatState
 			add(viobot);
 			viobot.flipX = true;
 		}
+*/
 
 		add(dad);
 
@@ -982,11 +1173,12 @@ class PlayState extends MusicBeatState
 
 		if (SONG.song == 'Corruption') {
 			centerCamera = true;
-			followWho = boyfriend;
+			followWho = girlfriend;
+			bfFly.x = gf.x - 2500;
+			bfFly.y = gf.y - 900;
 		}
 
 		if (SONG.song == 'Eclipse') {
-			add(bfDisc);		
 			followWho = boyfriend;
 			//centerCamera = true;
 		}
@@ -994,6 +1186,22 @@ class PlayState extends MusicBeatState
 		add(boyfriend);
 		if (SONG.player1 == 'duo-bfgf' || SONG.player1 == 'duo-viobotgf') {
 			add(girlfriend);
+		}
+
+		if (SONG.song == 'Corruption') {
+			harmonyWhite.x -= 150;
+			add(harmonyWhite);
+		}
+
+		if (SONG.song == 'Eclipse') {
+			add(foregrObj);
+			add(leavesShadow);
+			add(leaves);
+			add(emitter);
+			add(templeDark);
+			add(templeFogB);
+			add(halloweenWhite);
+			add(harmonyWhite);
 		}
 
 		if (curStage == 'arena') {
@@ -1199,6 +1407,14 @@ class PlayState extends MusicBeatState
 		scoreTxt.borderSize = 1.25;
 		scoreTxt.visible = !ClientPrefs.hideHud;
 
+		shieldIcon = new FlxSprite(iconP1.x, iconP1.y + 50);
+		shieldIcon.frames = Paths.getSparrowAtlas('shieldNoteHealthbar');
+		shieldIcon.animation.addByPrefix('shield', 'Shield Icon', 24, true);
+		shieldIcon.animation.play('shield');
+		shieldIcon.flipX = true;
+		shieldIcon.alpha = 0;
+		shieldIcon.antialiasing = ClientPrefs.globalAntialiasing;
+
 		add(healthBarP1);
 		add(healthBarP2);
 		add(healthBarP1Split);
@@ -1209,6 +1425,7 @@ class PlayState extends MusicBeatState
 		add(iconP1);
 		add(iconP2);
 		add(healthBarMarker);
+		add(shieldIcon);
 		add(scoreTxt);
 
 		strumLineNotes.cameras = [camHUD];
@@ -1228,6 +1445,7 @@ class PlayState extends MusicBeatState
 		timeBar.cameras = [camHUD];
 		timeBarBG.cameras = [camHUD];
 		timeTxt.cameras = [camHUD];
+		shieldIcon.cameras = [camHUD];
 		doof.cameras = [camDialog];
 
 		// if (SONG.song == 'South')
@@ -2205,11 +2423,23 @@ class PlayState extends MusicBeatState
 			#end
 		}
 
+//		THIS FUCKING KILLS THE PAUSE MENU BASICALLY WHOOOPS LMAOOOOOOOOOOOO
+//		if (paused)
+//			FlxTween.globalManager.active = false;
+//		else
+//			FlxTween.globalManager.active = true;
+
+		if (paused)
+			FlxTimer.globalManager.active = false;
+		else
+			FlxTimer.globalManager.active = true;
+
 		// FlxG.watch.addQuick('VOL', vocals.amplitudeLeft);
 		// FlxG.watch.addQuick('VOLRight', vocals.amplitudeRight);
 
 		iconP1.setGraphicSize(Std.int(FlxMath.lerp(150, iconP1.width, CoolUtil.boundTo(1 - (elapsed * 30), 0, 1))));
 		iconP2.setGraphicSize(Std.int(FlxMath.lerp(150, iconP2.width, CoolUtil.boundTo(1 - (elapsed * 30), 0, 1))));
+		shieldIcon.setGraphicSize(Std.int(FlxMath.lerp(225, shieldIcon.width, CoolUtil.boundTo(1 - (elapsed * 30), 0, 1))));
 
 		iconP1.updateHitbox();
 		iconP2.updateHitbox();
@@ -2262,6 +2492,9 @@ class PlayState extends MusicBeatState
 
 		if (health > 2)
 			health = 2;
+
+		shieldIcon.x = iconP1.x - 15;
+		shieldIcon.y = iconP1.y - 10;
 
 		#if debug
 		if (FlxG.keys.justPressed.EIGHT)
@@ -2491,7 +2724,7 @@ class PlayState extends MusicBeatState
 					*/
 				}
 				case 1712:
-					FlxTween.tween(bfDisc, { x: bfDisc.x - 3000, y: bfDisc.y - 50 }, 2, { ease: FlxEase.quadInOut });
+//					FlxTween.tween(bfDisc, { x: bfDisc.x - 3000, y: bfDisc.y - 50 }, 2, { ease: FlxEase.quadInOut });
 					harmonyWhite.screenCenter();
 					harmonyWhite.color = FlxColor.BLACK;
 					FlxTween.tween(harmonyWhite, { alpha: 1 }, 4, { ease: FlxEase.quadInOut });
@@ -2529,7 +2762,7 @@ class PlayState extends MusicBeatState
 				case 0, 256, 896, 1408:
 					camZooming = true;
 					centerCamera = true;
-					defaultCamZoom = 0.40;
+					defaultCamZoom = 0.375;
 					FlxTween.tween(FlxG.camera, { zoom: defaultCamZoom }, 2, { startDelay: 0.5, ease: FlxEase.quadInOut });
 					camFollow.x = gf.getMidpoint().x;
 					camFollow.y = gf.getMidpoint().y - 200;
@@ -2540,22 +2773,26 @@ class PlayState extends MusicBeatState
 						FlxTween.tween(camHUD, { alpha: 1 }, 11, { ease: FlxEase.quadInOut });
 				case 128, 384, 1152:
 					centerCamera = false;
-					defaultCamZoom = 0.525;
+					defaultCamZoom = 0.45;
 					FlxTween.tween(FlxG.camera, { zoom: defaultCamZoom }, 2, { startDelay: 0.5, ease: FlxEase.quadInOut });
 				case 1696:
 					FlxTween.tween(harmonyWhite, { alpha: 1 }, 4, { ease: FlxEase.quadInOut });
 					FlxTween.tween(camHUD, { alpha: 0 }, 4, { ease: FlxEase.quadInOut });
-				case 704:
-					FlxTween.tween(bfDisc, { x: bfDisc.x + 3500, y: bfDisc.y - 50 }, 2.5, { ease: FlxEase.quadInOut, onComplete: function(fuck) {
-						viobot.flipX = false;
-					} });
+//				case 704:
+//					FlxTween.tween(bfDisc, { x: bfDisc.x + 3500, y: bfDisc.y - 50 }, 2.5, { ease: FlxEase.quadInOut, onComplete: function(fuck) {
+//						viobot.flipX = false;
+//					} });
 				case 736:
-					viobot.playAnim('smack', true);
-					viobot.specialAnim = true;
-					viobot.heyTimer = 1.35;
+//					viobot.playAnim('smack', true);
+//					viobot.specialAnim = true;
+//					viobot.heyTimer = 1.35;
+					followWho = boyfriend;
 					boyfriend.playAnim('riseUp', true);
 					boyfriend.specialAnim = true;
 					boyfriend.heyTimer = 1.35;
+					FlxTween.tween(boyfriend, { y: boyfriend.y - 75 }, 0.85, {startDelay: 0.5});
+				case 512:
+					FlxTween.tween(bfFly, { x: bfFly.x + 6000, y: bfFly.y - 150 }, 50);
 			}
 
 			switch (curBeat) { // lol
@@ -2567,26 +2804,26 @@ class PlayState extends MusicBeatState
 					iconP1.changeIcon('duo-viobotgf');
 			}
 			
-			if (curStep >= 0)
-				crystalWave += 0.0125;
-			if (curStep >= 2)
-				crystalWaveGreen += 0.0125;
+//			if (curStep >= 0)
+//				crystalWave += 0.0125;
+//			if (curStep >= 2)
+//				crystalWaveGreen += 0.0125;
 			if (curStep >= 4)
 				crystalWaveViolet += 0.0125;
-			if (curStep >= 6)
-				crystalWaveYellow += 0.0125;
-			if (curStep >= 8)
-				crystalWaveBlue += 0.0125;
+//			if (curStep >= 6)
+//				crystalWaveYellow += 0.0125;
+//			if (curStep >= 8)
+//				crystalWaveBlue += 0.0125;
 
-			crystalRed.y += Math.sin(crystalWave) * 0.5;
-			crystalGreen.y += Math.sin(crystalWaveGreen) * 0.5;
-			crystalViolet.y += Math.sin(crystalWaveViolet) * 0.5;
-			crystalYellow.y += Math.sin(crystalWaveYellow) * 0.5;
-			crystalBlue.y += Math.sin(crystalWaveBlue) * 0.5;
+//			crystalRed.y += Math.sin(crystalWave) * 0.5;
+//			crystalGreen.y += Math.sin(crystalWaveGreen) * 0.5;
+//			crystalViolet.y += Math.sin(crystalWaveViolet) * 0.5;
+//			crystalYellow.y += Math.sin(crystalWaveYellow) * 0.5;
+//			crystalBlue.y += Math.sin(crystalWaveBlue) * 0.5;
 
-			bfDisc.y += Math.sin(crystalWaveViolet) * 0.35;
-			viobot.x = bfDisc.getMidpoint().x - 210;
-			viobot.y = bfDisc.getMidpoint().y - 440;	
+			bfFly.y += Math.sin(crystalWaveViolet) * 0.85;
+//			viobot.x = bfDisc.getMidpoint().x - 210;
+//			viobot.y = bfDisc.getMidpoint().y - 440;	
 
 			if (curStep >= 1152) {
 				followWho = boyfriend;
@@ -2602,17 +2839,22 @@ class PlayState extends MusicBeatState
 			switch (curStep) {
 				case 0:
 					camZooming = true;
-					defaultCamZoom = 0.525;
+					defaultCamZoom = 0.475;
 					FlxTween.tween(FlxG.camera, { zoom: defaultCamZoom }, 2, { startDelay: 0.5, ease: FlxEase.quadInOut });
 					camFollow.x = gf.getMidpoint().x;
 					camFollow.y = gf.getMidpoint().y - 200;
+				case 1216:
+					defaultCamZoom = 0.525;
+					FlxTween.tween(FlxG.camera, { zoom: defaultCamZoom }, 2, { startDelay: 0.5, ease: FlxEase.quadInOut });
+				case 1600:
+					defaultCamZoom = 0.475;
+					FlxTween.tween(FlxG.camera, { zoom: defaultCamZoom }, 2, { startDelay: 0.5, ease: FlxEase.quadInOut });
 				case 2240:
 					centerCamera = true;
-					defaultCamZoom = 0.45;
+					defaultCamZoom = 0.40;
 					FlxTween.tween(FlxG.camera, { zoom: defaultCamZoom }, 2, { ease: FlxEase.quadInOut });
-					camFollow.x = gf.getMidpoint().x;
+					camFollow.x = gf.getMidpoint().x + 20;
 					camFollow.y = gf.getMidpoint().y + 75;
-
 				case 2256:
 					FlxTween.tween(harmonyWhite, { alpha: 1 }, 4, { startDelay: 0.5, ease: FlxEase.quadInOut });
 					FlxTween.tween(camHUD, { alpha: 0 }, 4, { startDelay: 0.5, ease: FlxEase.quadInOut });
@@ -2629,15 +2871,17 @@ class PlayState extends MusicBeatState
 			if (curStep >= 8)
 				crystalWaveBlue += 0.0125;
 
-			crystalRed.y += Math.sin(crystalWave) * 0.5;
-			crystalGreen.y += Math.sin(crystalWaveGreen) * 0.5;
-			crystalViolet.y += Math.sin(crystalWaveViolet) * 0.5;
-			crystalYellow.y += Math.sin(crystalWaveYellow) * 0.5;
-			crystalBlue.y += Math.sin(crystalWaveBlue) * 0.5;
+	//		crystalRed.y += Math.sin(crystalWave) * 0.5;
+	//		crystalGreen.y += Math.sin(crystalWaveGreen) * 0.5;
+	//		crystalViolet.y += Math.sin(crystalWaveViolet) * 0.5;
+	//		crystalYellow.y += Math.sin(crystalWaveYellow) * 0.5;
+	//		crystalBlue.y += Math.sin(crystalWaveBlue) * 0.5;
 
 			bfDisc.y += Math.sin(crystalWaveViolet) * 0.35;
 			boyfriend.x = bfDisc.getMidpoint().x - 210;
 			boyfriend.y = bfDisc.getMidpoint().y - 440;
+
+			gf.alpha = 0.0001;
 
 			if ((curStep >= 64) && (curStep <= 2064)) {
 				harmonyWhite.alpha = 0.001;
@@ -3173,8 +3417,8 @@ class PlayState extends MusicBeatState
 					}
 				}
 
-				case 'Kill Henchmen':
-					killHenchmen();
+//				case 'Kill Henchmen':
+//					killHenchmen();
 
 				case 'Add Camera Zoom':
 					if(ClientPrefs.camZooms && FlxG.camera.zoom < 1.35) {
@@ -3439,8 +3683,11 @@ class PlayState extends MusicBeatState
 							camFollow.y = boyfriend.getMidpoint().y - (curSong == 'Harmony' ? 0 : 100);
 						}
 					case 'sparklestone':
-						camFollow.x = boyfriend.getMidpoint().x;
-						camFollow.y = boyfriend.getMidpoint().y + 50;
+						camFollow.x = followWho.getMidpoint().x - 50;
+						camFollow.y = followWho.getMidpoint().y + (followWho == girlfriend ? -250 : 100);
+					case 'foreverfall':
+						camFollow.x = followWho.getMidpoint().x - 200;
+						camFollow.y = followWho.getMidpoint().y + (followWho == girlfriend ? -250 : 100);
 				}
 
 				/*
@@ -3507,7 +3754,7 @@ class PlayState extends MusicBeatState
 		if(achievementObj != null) {
 			return;
 		} else {
-			var achieve:Int = checkForAchievement([1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 14]);
+			var achieve:Int = checkForAchievement([0, 1, 2, 3, 4, 5]);
 			if(achieve > -1) {
 				startAchievement(achieve);
 				return;
@@ -4048,12 +4295,12 @@ class PlayState extends MusicBeatState
 						}
 					}
 	
-					#if ACHIEVEMENTS_ALLOWED
-					var achieve:Int = checkForAchievement([12]);
-					if (achieve > -1) {
-						startAchievement(achieve);
-					}
-					#end
+//					#if ACHIEVEMENTS_ALLOWED
+//					var achieve:Int = checkForAchievement([12]);
+//					if (achieve > -1) {
+//						startAchievement(achieve);
+//					}
+//					#end
 				} else {
 					if (boyfriend.holdTimer > Conductor.stepCrochet * 0.001 * boyfriend.singDuration && boyfriend.animation.curAnim.name.startsWith('sing')
 						&& !boyfriend.animation.curAnim.name.endsWith('miss')) {
@@ -4199,6 +4446,16 @@ class PlayState extends MusicBeatState
 		}
 
 		FlxG.sound.play(Paths.sound('bonk'), FlxG.random.float(0.2, 0.4));
+
+		Achievements.starNotesHit++;
+
+		var achieve:Int = checkForAchievement([5]);
+		if(achieve > -1) {
+			startAchievement(achieve);
+		} else {
+			FlxG.save.data.starNotesHit = Achievements.starNotesHit;
+			FlxG.save.flush();
+		}
 	}
 
 	function shieldNote(note:Note):Void {
@@ -4207,21 +4464,31 @@ class PlayState extends MusicBeatState
 		boyfriend.heyTimer = 0.6;
 
 		if (!shieldOn) {
-			shieldTimer = new FlxPieDial(healthBarBG.x + healthBarBG.width + 200, healthBarBG.y - 100, 72, FlxColor.CYAN, 72, FlxPieDialShape.CIRCLE, true, 24);
-			shieldTimer.setGraphicSize(Std.int(shieldTimer.width * 0.5));
-			shieldTimer.cameras = [camHUD];
-			add(shieldTimer);
+//			shieldTimer = new FlxPieDial(healthBarBG.x + healthBarBG.width + 200, healthBarBG.y - 100, 72, FlxColor.CYAN, 72, FlxPieDialShape.CIRCLE, true, 24);
+//			shieldTimer.setGraphicSize(Std.int(shieldTimer.width * 0.5));
+//			shieldTimer.cameras = [camHUD];
+//			add(shieldTimer);
+			FlxTween.tween(shieldIcon, {alpha: 0.75}, 1);
 		} else {
-			FlxTween.cancelTweensOf(shieldTimer);
+			FlxTimer.globalManager.completeAll();
+			FlxTween.tween(shieldIcon, {alpha: 0.75}, 1);
 		}
 
-		shieldTimer.amount = 1;
+//		shieldTimer.amount = 1;
 		shieldOn = true;
-		
-		FlxTween.tween(shieldTimer, {amount: 0}, 10, {onComplete: function(twn:FlxTween) {
-			shieldTimer.destroy();
+
+		new FlxTimer().start(10, function(fuck) {
 			shieldOn = false;
-		}});
+			FlxTween.tween(shieldIcon, {alpha: 0}, 1);
+		});
+		
+//		FlxTween.tween(shieldTimer, {amount: 0}, 10, {onComplete: function(twn:FlxTween) {
+//			shieldTimer.destroy();
+//			shieldOn = false;
+//			FlxTween.tween(shieldIcon, {alpha: 0}, 1);
+//		}});
+
+		FlxG.sound.play(Paths.sound('shieldNote'), FlxG.random.float(0.7, 0.9));
 
 		if (!note.isSustainNote)
 		{
@@ -4418,22 +4685,22 @@ class PlayState extends MusicBeatState
 	function lightningStrikeShit():Void
 	{
 		FlxG.sound.play(Paths.soundRandom('thunder_', 1, 2));
-		if(!ClientPrefs.lowQuality) halloweenBG.animation.play('lightning');
+	//	if(!ClientPrefs.lowQuality) halloweenBG.animation.play('lightning');
 
 		lightningStrikeBeat = curBeat;
 		lightningOffset = FlxG.random.int(8, 24);
 
-		boyfriend.playAnim('scared', true);
-		gf.playAnim('scared', true);
+	//	boyfriend.playAnim('scared', true);
+	//	gf.playAnim('scared', true);
 
 		if(ClientPrefs.camZooms) {
 			FlxG.camera.zoom += 0.015;
 			camHUD.zoom += 0.03;
 
-			if(!camZooming) { //Just a way for preventing it to be permanently zoomed until Skid & Pump hits a note
-				FlxTween.tween(FlxG.camera, {zoom: defaultCamZoom}, 0.5);
-				FlxTween.tween(camHUD, {zoom: 1}, 0.5);
-			}
+		//	if(!camZooming) { //Just a way for preventing it to be permanently zoomed until Skid & Pump hits a note
+		//		FlxTween.tween(FlxG.camera, {zoom: defaultCamZoom}, 0.5);
+		//		FlxTween.tween(camHUD, {zoom: 1}, 0.5);
+		//	}
 		}
 
 		if(ClientPrefs.flashing) {
@@ -4444,6 +4711,7 @@ class PlayState extends MusicBeatState
 		}
 	}
 
+	/*
 	function killHenchmen():Void
 	{
 		if(!ClientPrefs.lowQuality && ClientPrefs.violence && curStage == 'limo') {
@@ -4467,6 +4735,7 @@ class PlayState extends MusicBeatState
 			}
 		}
 	}
+	*/
 
 	function resetLimoKill():Void
 	{
@@ -4568,10 +4837,10 @@ class PlayState extends MusicBeatState
 				if (!banana.animation.curAnim.name.startsWith("sing") && !banana.stunned)
 					banana.dance();
 			}
-			if (curSong == 'Corruption') {
-				if (viobot.heyTimer == 0)
-					viobot.dance();
-			}
+//			if (curSong == 'Corruption') {
+//				if (viobot.heyTimer == 0)
+//					viobot.dance();
+//			}
 		} else if (dad.curCharacter == 'spooky' && !dad.animation.curAnim.name.startsWith("sing") && !dad.stunned) {
 			dad.dance();
 		}
@@ -4653,7 +4922,7 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		if (curStage == 'spooky' && FlxG.random.bool(10) && curBeat > lightningStrikeBeat + lightningOffset)
+		if (curStage == 'foreverfall' && FlxG.random.bool(10) && curBeat > lightningStrikeBeat + lightningOffset)
 		{
 			lightningStrikeShit();
 		}
@@ -4689,82 +4958,35 @@ class PlayState extends MusicBeatState
 
 	private function checkForAchievement(arrayIDs:Array<Int>):Int {
 		for (i in 0...arrayIDs.length) {
-			if(!Achievements.achievementsUnlocked[arrayIDs[i]][1]) {
+			if (!Achievements.achievementsUnlocked[arrayIDs[i]][1]) {
 				switch(arrayIDs[i]) {
-					case 1 | 2 | 3 | 4 | 5 | 6:
-						if(isStoryMode && campaignMisses < 1 && songMisses < 1 && storyPlaylist.length <= 1 && storyWeek == arrayIDs[i] && !changedDifficulty && !usedPractice && storyDifficulty == 2) {
+					case 0:
+						if(isStoryMode && storyPlaylist.length <= 1 && storyWeek == 1 && !changedDifficulty && !usedPractice && storyDifficulty == 2) {
 							Achievements.unlockAchievement(arrayIDs[i]);
 							return arrayIDs[i];
 						}
-					case 7:
-						if(isStoryMode && storyPlaylist.length <= 1 && storyWeek == -99 && !changedDifficulty && !usedPractice && storyDifficulty == 2) {
+					case 1:
+						if(isStoryMode && campaignMisses < 1 && songMisses < 1 && storyPlaylist.length <= 1 && storyWeek == 1 && !changedDifficulty && !usedPractice && storyDifficulty == 2) {
 							Achievements.unlockAchievement(arrayIDs[i]);
 							return arrayIDs[i];
 						}
-					case 8:
-						if(isStoryMode && campaignMisses < 1 && songMisses < 1 && storyPlaylist.length <= 1 && storyWeek == -99 && !changedDifficulty && !usedPractice && storyDifficulty == 2) {
-							Achievements.unlockAchievement(arrayIDs[i]);
-							return arrayIDs[i];
-						}
-					case 9:
-						if(ratingPercent < 0.2 && !practiceMode) {
-							Achievements.unlockAchievement(arrayIDs[i]);
-							return arrayIDs[i];
-						}
-					case 10:
-						if(ratingPercent >= 1 && !usedPractice) {
-							Achievements.unlockAchievement(arrayIDs[i]);
-							return arrayIDs[i];
-						}
-					case 11:
-						if(songMisses >= 350 && !usedPractice) {
-							Achievements.unlockAchievement(arrayIDs[i]);
-							return arrayIDs[i];
-						}
-					case 12:
-						if(Achievements.henchmenDeath >= 100) {
-							Achievements.unlockAchievement(arrayIDs[i]);
-							return arrayIDs[i];
-						}
-					case 13:
-						if(boyfriend.holdTimer >= 20 && !usedPractice) {
-							Achievements.unlockAchievement(arrayIDs[i]);
-							return arrayIDs[i];
-						}
-					case 14:
-						if(!boyfriendIdled && !usedPractice) {
-							Achievements.unlockAchievement(arrayIDs[i]);
-							return arrayIDs[i];
-						}
-					case 15:
-						if(!usedPractice) {
-							var howManyPresses:Int = 0;
-							for (j in 0...keysPressed.length) {
-								if(keysPressed[j]) howManyPresses++;
-							}
-
-							if(howManyPresses <= 2) {
-								Achievements.unlockAchievement(arrayIDs[i]);
-								return arrayIDs[i];
-							}
-						}
-					case 16:
-						if(ClientPrefs.framerate <= 60 && ClientPrefs.lowQuality && !ClientPrefs.globalAntialiasing) {
-							Achievements.unlockAchievement(arrayIDs[i]);
-							return arrayIDs[i];
-						}
-					case 17:
-						if(SONG.song.toLowerCase() == 'test' && !usedPractice) {
-							Achievements.unlockAchievement(arrayIDs[i]);
-							return arrayIDs[i];
-						}
-					case 18:
+					case 2:
 						if(SONG.song.toLowerCase() == 'the-ups-and-downs' && !usedPractice && storyDifficulty == 2) {
 							Achievements.unlockAchievement(arrayIDs[i]);
 							return arrayIDs[i];
 						}
-					case 19:
-						if(SONG.song.toLowerCase() == 'harmony' && !usedPractice && storyDifficulty == 2) {
+					case 3:
+						if(isStoryMode && storyPlaylist.length <= 1 && storyWeek == 2 && !changedDifficulty && !usedPractice && storyDifficulty == 3) {
+							Achievements.unlockAchievement(arrayIDs[i]);
+							return arrayIDs[i];
+						}
+					case 4:
+						if(isStoryMode && campaignMisses < 1 && songMisses < 1 && storyPlaylist.length <= 1 && storyWeek == 2 && !changedDifficulty && !usedPractice && storyDifficulty == 3) {
+							Achievements.unlockAchievement(arrayIDs[i]);
+							return arrayIDs[i];
+						}
+					case 5:
+						if(Achievements.starNotesHit >= 100) {
 							Achievements.unlockAchievement(arrayIDs[i]);
 							return arrayIDs[i];
 						}

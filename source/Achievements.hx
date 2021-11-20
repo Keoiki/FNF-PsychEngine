@@ -11,42 +11,27 @@ using StringTools;
 
 class Achievements {
 	public static var achievementsStuff:Array<Dynamic> = [ //Name, Description, Hidden achievement
-		["Freaky on a Friday Night",	"Play on a Friday... Night.",							true],
 		["Showstopper",					"Beat Violastro on Hard.",								false],
 		["Spectacular Play!",			"Beat Violastro on Hard with no Misses.",				true],
 		["*Synthetic Bwehehe*", 		"Beat \"The Ups and Downs\" on Hard.",					true],
 		["Onto the Venture!",			"Beat Vibrants on Hard.",								false],
 		["What a Vibrant Venture!",		"Beat Vibrants on Hard with no Misses.",				true],
-		["Motherfunkin' Disaster!",		"Complete a Song with a rating lower than 20%.",		false],
-		["Perfectionist",				"Complete a Song with a rating of 100%.",				false],
-		["Skill Issue",					"Complete a Song with 350 misses or more.",				false],
-		["Roadkill Enthusiast",			"Watch the Henchmen die over 100 times.",				false],
-		["Oversinging Much...?",		"Hold down a note for 20 seconds.",						false],
-		["Hyperactive",					"Finish a Song without going Idle.",					false],
-		["Just the Two of Us",			"Finish a Song pressing only two keys.",				false],
-		["Toaster Gamer",				"Have you tried to run the game on a toaster?",			false],
-		["Debugger",					"Beat the \"Test\" Stage from the Chart Editor.",		true]
+		["That must really hurt!",		"Hit a total of 100 Star Notes",						false]
+//		["Semag Collector",				"Collect all Coin Pieces",								true]
 	];
 
 	public static var achievementsUnlocked:Array<Dynamic> = [ //Save string + is it unlocked?
-		['friday_night_play', false],	//0
-		['violastro', false],			//1
-		['violastro_nomiss', false],	//2
-		['upsdowns', false], 			//3
-		['vibrants', false], 			//4
-		['vibrants_nomiss', false], 	//5
-		['ur_bad', false],				//6
-		['ur_good', false],				//7
-		['skill_issue', false],			//8
-		['roadkill_enthusiast', false],	//9
-		['oversinging', false],			//10
-		['hype', false],				//11
-		['two_keys', false],			//12
-		['toastie', false],				//13
-		['debugger', false], 			//14
+		['vv_violastro', false],			//0
+		['vv_violastro_nomiss', false],		//1
+		['vv_upsdowns', false], 			//2
+		['vv_vibrants', false], 			//3
+		['vv_vibrants_nomiss', false], 		//4
+		['vv_star_notes', false]			//5
+//		['vv_coin_pieces', false]			//6
 	];
 
-	public static var henchmenDeath:Int = 0;
+//	public static var henchmenDeath:Int = 0;
+	public static var starNotesHit:Int = 0;
 	public static function unlockAchievement(id:Int):Void {
 		FlxG.log.add('Completed achievement "' + achievementsStuff[id][0] +'"');
 		achievementsUnlocked[id][1] = true;
@@ -66,8 +51,8 @@ class Achievements {
 					}
 				}
 			}
-			if(henchmenDeath == 0 && FlxG.save.data.henchmenDeath != null) {
-				henchmenDeath = FlxG.save.data.henchmenDeath;
+			if(starNotesHit == 0 && FlxG.save.data.starNotesHit != null) {
+				starNotesHit = FlxG.save.data.starNotesHit;
 			}
 		}
 

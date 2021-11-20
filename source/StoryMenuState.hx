@@ -47,7 +47,7 @@ class StoryMenuState extends MusicBeatState
 	var weekBackground:Array<String> = [
 		'temple',
 		'arena',
-		'temple'
+		'venture'
 	];
 
 	var txtWeekTitle:FlxText;

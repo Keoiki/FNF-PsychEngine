@@ -13,7 +13,7 @@ class NoteSplash extends FlxSprite
 		super(x, y);
 
 		switch (curStage) {
-			case 'arena' | 'temple': {
+			default: {
 				frames = Paths.getSparrowAtlas('noteSplashes_violastro');
 				animation.addByPrefix("note1-0", "note splash sparkle yellow", 24, false);
 				animation.addByPrefix("note2-0", "note splash sparkle red", 24, false);
@@ -23,17 +23,6 @@ class NoteSplash extends FlxSprite
 				animation.addByPrefix("note2-1", "note splash sparkle red", 24, false);
 				animation.addByPrefix("note0-1", "note splash sparkle green", 24, false);
 				animation.addByPrefix("note3-1", "note splash sparkle blue", 24, false);
-			}
-			default: {
-				frames = Paths.getSparrowAtlas('noteSplashes_default');
-				animation.addByPrefix("note1-0", "note splash blue 1", 24, false);
-				animation.addByPrefix("note2-0", "note splash green 1", 24, false);
-				animation.addByPrefix("note0-0", "note splash purple 1", 24, false);
-				animation.addByPrefix("note3-0", "note splash red 1", 24, false);
-				animation.addByPrefix("note1-1", "note splash blue 2", 24, false);
-				animation.addByPrefix("note2-1", "note splash green 2", 24, false);
-				animation.addByPrefix("note0-1", "note splash purple 2", 24, false);
-				animation.addByPrefix("note3-1", "note splash red 2", 24, false);
 			}
 		}
 

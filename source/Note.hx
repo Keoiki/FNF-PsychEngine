@@ -90,7 +90,7 @@ class Note extends FlxSprite
 				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
 				updateHitbox();
 
-			case 'arena'| 'temple': {
+			default: {
 				frames = Paths.getSparrowAtlas('NOTE_assets_WeekViolastro');
 
 				animation.addByPrefix('greenScroll', 'green0');
@@ -115,31 +115,6 @@ class Note extends FlxSprite
 				updateHitbox();
 				antialiasing = ClientPrefs.globalAntialiasing;
 			}
-
-			default:
-				frames = Paths.getSparrowAtlas('NOTE_assets');
-
-				animation.addByPrefix('greenScroll', 'green0');
-				animation.addByPrefix('redScroll', 'red0');
-				animation.addByPrefix('blueScroll', 'blue0');
-				animation.addByPrefix('purpleScroll', 'purple0');
-
-				if (isSustainNote)
-				{
-					animation.addByPrefix('purpleholdend', 'pruple end hold');
-					animation.addByPrefix('greenholdend', 'green hold end');
-					animation.addByPrefix('redholdend', 'red hold end');
-					animation.addByPrefix('blueholdend', 'blue hold end');
-
-					animation.addByPrefix('purplehold', 'purple hold piece');
-					animation.addByPrefix('greenhold', 'green hold piece');
-					animation.addByPrefix('redhold', 'red hold piece');
-					animation.addByPrefix('bluehold', 'blue hold piece');
-				}
-
-				setGraphicSize(Std.int(width * 0.7));
-				updateHitbox();
-				antialiasing = ClientPrefs.globalAntialiasing;
 		}
 
 		if (noteType == 3) {
@@ -247,7 +222,10 @@ class Note extends FlxSprite
 			}
 
 			if (noteType == 4) {
-				loadGraphic(Paths.image('greg'));
+				frames = Paths.getSparrowAtlas('shieldNote');
+				animation.addByPrefix('shield', 'shield', 24, true);
+				animation.play('shield');
+		//		loadGraphic(Paths.image('greg'));
 				setGraphicSize(Std.int(width * 0.7));
 				antialiasing = ClientPrefs.globalAntialiasing;
 			}

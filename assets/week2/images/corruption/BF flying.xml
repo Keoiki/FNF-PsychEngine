@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="BF flying.png">
+	<!-- Created with Adobe Animate version 22.0.0.93 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="BF flying0000" x="0" y="0" width="289" height="221" frameX="-7" frameY="0" frameWidth="296" frameHeight="221"/>
+	<SubTexture name="BF flying0001" x="291" y="0" width="289" height="221" frameX="-6" frameY="0" frameWidth="296" frameHeight="221"/>
+	<SubTexture name="BF flying0002" x="582" y="0" width="294" height="221" frameX="0" frameY="0" frameWidth="296" frameHeight="221"/>
+	<SubTexture name="BF flying0003" x="0" y="223" width="286" height="221" frameX="-5" frameY="0" frameWidth="296" frameHeight="221"/>
+</TextureAtlas>

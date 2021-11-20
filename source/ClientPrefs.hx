@@ -81,7 +81,7 @@ class ClientPrefs {
 			}
 		}
 		FlxG.save.data.achievementsUnlocked = achieves;
-		FlxG.save.data.henchmenDeath = Achievements.henchmenDeath;
+		FlxG.save.data.starNotesHit = Achievements.starNotesHit;
 		FlxG.save.flush();
 
 		var save:FlxSave = new FlxSave();

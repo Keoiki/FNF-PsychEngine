@@ -41,7 +41,7 @@ class CreditsState extends MusicBeatState
 		['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine\n"WikiHow: How to handle fame."',
 		'https://twitter.com/Shadow_Mario_',	0xFFFFDD33],
 		['RiverOaken',			'riveroaken',		'Artist/Animator of Psych Engine\n"Wait, I made this???"',
-		'https://twitter.com/river_oaken',		0xFFC30085],
+		'https://twitter.com/RiverOaken',		0xFFC30085],
 		[''],	
 		["Funkin' Crew"],	
 		['ninjamuffin99',		'ninjamuffin99',	"Programmer of Friday Night Funkin'",					'https://twitter.com/ninja_muffin99',	0xFFF73838],

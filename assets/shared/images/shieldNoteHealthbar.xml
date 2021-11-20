@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="shieldNoteHealthbar.png">
+	<!-- Created with Adobe Animate version 22.0.0.93 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Shield Icon0000" x="0" y="0" width="225" height="176"/>
+	<SubTexture name="Shield Icon0001" x="0" y="0" width="225" height="176"/>
+	<SubTexture name="Shield Icon0002" x="0" y="0" width="225" height="176"/>
+	<SubTexture name="Shield Icon0003" x="227" y="0" width="225" height="176"/>
+	<SubTexture name="Shield Icon0004" x="227" y="0" width="225" height="176"/>
+	<SubTexture name="Shield Icon0005" x="0" y="0" width="225" height="176"/>
+	<SubTexture name="Shield Icon0006" x="0" y="0" width="225" height="176"/>
+	<SubTexture name="Shield Icon0007" x="0" y="0" width="225" height="176"/>
+	<SubTexture name="Shield Icon0008" x="0" y="178" width="225" height="176"/>
+	<SubTexture name="Shield Icon0009" x="0" y="178" width="225" height="176"/>
+</TextureAtlas>

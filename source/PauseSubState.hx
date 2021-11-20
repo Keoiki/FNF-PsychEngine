@@ -1,5 +1,6 @@
 package;
 
+import flixel.util.FlxTimer;
 import Controls.Control;
 import flixel.FlxG;
 import flixel.FlxSprite;
@@ -139,9 +140,11 @@ class PauseSubState extends MusicBeatSubstate
 					PlayState.usedPractice = true;
 					practiceText.visible = PlayState.practiceMode;
 				case "Restart Song":
+					FlxTimer.globalManager.active = true;
 					FlxG.resetState();
 					FlxG.sound.music.volume = 0;
 				case "Exit to menu":
+					FlxTimer.globalManager.active = true;
 					PlayState.deathCounter = 0;
 					PlayState.seenCutscene = false;
 					if(PlayState.isStoryMode) {
@@ -154,6 +157,7 @@ class PauseSubState extends MusicBeatSubstate
 					PlayState.changedDifficulty = false;
 
 				case 'EASY' | 'NORMAL' | 'HARD':
+					FlxTimer.globalManager.active = true;
 					var name:String = PlayState.SONG.song.toLowerCase();
 					var poop = Highscore.formatSong(name, curSelected);
 					PlayState.SONG = Song.loadFromJson(poop, name);
