@@ -779,6 +779,59 @@ class PlayState extends MusicBeatState
 				cacti02.scrollFactor.set(1.1, 1.1);
 				cacti02.active = false;
 				add(cacti02);
+
+				// Particles
+
+				emitter = new FlxEmitter(land.x + 1200, land.y - 400);
+				for (i in 0...4000) {
+					var p = new FlxParticle();
+					p.makeGraphic(15, 15, 0xFFFFFFFF);
+					p.exists = false;
+					emitter.add(p);
+				}
+				emitter.launchMode = FlxEmitterMode.SQUARE;
+				emitter.setSize(4000, 4000);
+				emitter.velocity.start.min.x = -400;
+				emitter.velocity.start.max.x = -4000;
+				emitter.velocity.start.min.y = 200;
+				emitter.velocity.start.max.y = 1000;
+				emitter.angularVelocity.set(0, 360, 180, 720);
+				emitter.alpha.set(1, 1, 0, 0);
+				emitter.color.set(FlxColor.PURPLE, FlxColor.PURPLE, FlxColor.PURPLE, FlxColor.PURPLE);
+				emitter.scale.set(1, 1, 1.5, 1.5, 0, 0, 0, 0);
+				emitter.blend = BlendMode.ADD;
+				emitter.start(false, 0.0025);
+				emitter.emitting = false;
+
+				// Particles End
+
+				templeFogP = new FlxSprite(emitter.x + 200, emitter.y + 1200).loadGraphic(Paths.image('templeVioletFog'));
+				templeFogP.antialiasing = ClientPrefs.globalAntialiasing;
+				templeFogP.setGraphicSize(Std.int(templeFogP.width * 1.5), Std.int(templeFogP.height * 1.3));
+				templeFogP.scrollFactor.set(1.2, 1.4);
+				templeFogP.blend = BlendMode.LIGHTEN;
+				templeFogP.alpha = 0.001;
+
+				templePurple = new FlxSprite(emitter.x + 200, emitter.y + 1200).loadGraphic(Paths.image('templeVioletDark'));
+				templePurple.antialiasing = ClientPrefs.globalAntialiasing;
+				templePurple.setGraphicSize(Std.int(templePurple.width * 1.5), Std.int(templePurple.height * 1.3));
+				templePurple.scrollFactor.set(1.3, 1.5);
+				templePurple.blend = BlendMode.OVERLAY;
+				templePurple.alpha = 0.001;
+
+				templeDark = new FlxSprite(emitter.x + 200, emitter.y + 1200).loadGraphic(Paths.image('templeDarkness'));
+				templeDark.antialiasing = ClientPrefs.globalAntialiasing;
+				templeDark.setGraphicSize(Std.int(templeDark.width * 1.5), Std.int(templeDark.height * 1.3));
+				templeDark.scrollFactor.set(1.4, 1.65);
+				templeDark.blend = BlendMode.OVERLAY;
+				templeDark.alpha = 0.001;
+
+				templeFogB = new FlxSprite(emitter.x + 200, emitter.y + 1200).loadGraphic(Paths.image('templeBlackFog'));
+				templeFogB.antialiasing = ClientPrefs.globalAntialiasing;
+				templeFogB.setGraphicSize(Std.int(templeFogB.width * 1.5), Std.int(templeFogB.height * 1.3));
+				templeFogB.scrollFactor.set(1.5, 1.75);
+				templeFogB.blend = BlendMode.OVERLAY;
+				templeFogB.alpha = 0.001;
 			}
 
 			case 'eclipse': {
@@ -1190,6 +1243,11 @@ class PlayState extends MusicBeatState
 
 		if (SONG.song == 'Corruption') {
 			harmonyWhite.x -= 150;
+			add(templeFogP);
+			add(templePurple);
+			add(templeDark);
+			add(emitter);
+			add(templeFogB);
 			add(harmonyWhite);
 		}
 
@@ -2494,7 +2552,7 @@ class PlayState extends MusicBeatState
 			health = 2;
 
 		shieldIcon.x = iconP1.x - 15;
-		shieldIcon.y = iconP1.y - 10;
+		shieldIcon.y = iconP1.y - 5;
 
 		#if debug
 		if (FlxG.keys.justPressed.EIGHT)
@@ -3095,9 +3153,8 @@ class PlayState extends MusicBeatState
 										azura.holdTimer = 0;
 								}
 								if (!shieldOn) {
-									if (health >= 0.2) {
-										health -= (0.005 * health * 2.25) * vibrantsRate;
-									}
+									health -= (0.005 * health * 4) * vibrantsRate;
+//									if (health >= 0.2)
 								}
 							}
 
@@ -3413,6 +3470,31 @@ class PlayState extends MusicBeatState
 							emitter2.emitting = false;
 							vibrantsRate = 1;
 							//FlxTween.tween(stageDarkness, {alpha: 0.001}, 1, {ease: FlxEase.quadInOut});
+						}
+					}
+
+					if (curStage == 'sparklestone' || curStage == 'foreverfall') {
+						var lightId:Int = Std.parseInt(value1);
+						if (Math.isNaN(lightId)) lightId = 0;
+
+						if (lightId == 1) {
+							if (curStage == 'sparklestone') {
+								FlxTween.tween(templeFogP, {alpha: 0.825}, 2, {ease: FlxEase.quadInOut});
+								FlxTween.tween(templePurple, {alpha: 0.885}, 2, {ease: FlxEase.quadInOut});
+								FlxTween.tween(templeDark, {alpha: 0.75}, 2, {ease: FlxEase.quadInOut});
+								FlxTween.tween(templeFogB, {alpha: 0.85}, 2, {ease: FlxEase.quadInOut});
+								emitter.emitting = true;
+							}
+							vibrantsRate = 1.2;
+						} else {
+							if (curStage == 'sparklestone') {
+								FlxTween.tween(templeFogP, {alpha: 0.001}, 2, {ease: FlxEase.quadInOut});
+								FlxTween.tween(templePurple, {alpha: 0.001}, 2, {ease: FlxEase.quadInOut});
+								FlxTween.tween(templeDark, {alpha: 0.001}, 2, {ease: FlxEase.quadInOut});
+								FlxTween.tween(templeFogB, {alpha: 0.001}, 2, {ease: FlxEase.quadInOut});
+								emitter.emitting = false;
+							}
+							vibrantsRate = 1;
 						}
 					}
 				}
@@ -3899,17 +3981,18 @@ class PlayState extends MusicBeatState
 
 		// I'M SORRY FOR THIS LMAOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 		strumLineNotes.visible = false;
-		grpNoteSplashes.visible = false;
-		notes.visible = false;
-		FlxTween.tween(healthBar, {alpha: 0}, 2);
-		FlxTween.tween(healthBarBG, {alpha: 0}, 2);
-		FlxTween.tween(iconP1, {alpha: 0}, 2);
-		FlxTween.tween(iconP2, {alpha: 0}, 2);
-		FlxTween.tween(scoreTxt, {alpha: 0}, 2);
-		FlxTween.tween(timeBar, {alpha: 0}, 2);
-		FlxTween.tween(timeBarBG, {alpha: 0}, 2);
-		FlxTween.tween(timeTxt, {alpha: 0}, 2);
+//		grpNoteSplashes.visible = false;
+//		notes.visible = false;
+//		FlxTween.tween(healthBar, {alpha: 0}, 2);
+//		FlxTween.tween(healthBarBG, {alpha: 0}, 2);
+//		FlxTween.tween(iconP1, {alpha: 0}, 2);
+//		FlxTween.tween(iconP2, {alpha: 0}, 2);
+//		FlxTween.tween(scoreTxt, {alpha: 0}, 2);
+//		FlxTween.tween(timeBar, {alpha: 0}, 2);
+//		FlxTween.tween(timeBarBG, {alpha: 0}, 2);
+//		FlxTween.tween(timeTxt, {alpha: 0}, 2);
 
+		FlxTween.tween(camHUD, { alpha: 0 }, 2);
 
 		var blackShit:FlxSprite = new FlxSprite(-1000, -750).makeGraphic(FlxG.width * 3, FlxG.height * 3, FlxColor.BLACK);
 		blackShit.scrollFactor.set();
@@ -3927,99 +4010,9 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('supernova/supernovaEndDialogue'));
 				dialogueIntro(dialogue, 'empty', false);
 			}
+			
 			case 'the-ups-and-downs': {
-				if (storyDifficulty != 2) {
-
-					//WHAT THE FUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUCK
-
-					crystalRed = new FlxSprite(0, 0);
-					crystalRed.frames = Paths.getSparrowAtlas('temple/powerCrystalFire');
-					crystalRed.animation.addByPrefix('spin', 'Power Crystal Fire', 24, true);
-					crystalRed.antialiasing = ClientPrefs.globalAntialiasing;
-					crystalRed.scrollFactor.set();
-					crystalRed.alpha = 0;
-					
-					crystalYellow = new FlxSprite(0, 0);
-					crystalYellow.frames = Paths.getSparrowAtlas('temple/powerCrystalEarth');
-					crystalYellow.animation.addByPrefix('spin', 'Power Crystal Earth', 24, true);
-					crystalYellow.antialiasing = ClientPrefs.globalAntialiasing;
-					crystalYellow.scrollFactor.set();
-					crystalYellow.alpha = 0;
-					
-					crystalGreen = new FlxSprite(0, 0);
-					crystalGreen.frames = Paths.getSparrowAtlas('temple/powerCrystalLeaf');
-					crystalGreen.animation.addByPrefix('spin', 'Power Crystal Leaf', 24, true);
-					crystalGreen.antialiasing = ClientPrefs.globalAntialiasing;
-					crystalGreen.scrollFactor.set();
-					crystalGreen.alpha = 0;
-					
-					crystalBlue = new FlxSprite(0, 0);
-					crystalBlue.frames = Paths.getSparrowAtlas('temple/powerCrystalWater');
-					crystalBlue.animation.addByPrefix('spin', 'Power Crystal Water', 24, true);
-					crystalBlue.antialiasing = ClientPrefs.globalAntialiasing;
-					crystalBlue.scrollFactor.set();
-					crystalBlue.alpha = 0;
-					
-					crystalViolet = new FlxSprite(0, 0);
-					crystalViolet.frames = Paths.getSparrowAtlas('temple/powerCrystalStar');
-					crystalViolet.animation.addByPrefix('spin', 'Power Crystal Star', 24, true);
-					crystalViolet.antialiasing = ClientPrefs.globalAntialiasing;
-					crystalViolet.scrollFactor.set();
-					crystalViolet.alpha = 0;
-
-					crystalRed.screenCenter();
-					crystalRed.x -= 300;
-					crystalRed.y -= 300;
-					crystalYellow.screenCenter();
-					crystalYellow.x += 300;
-					crystalYellow.y -= 300;
-					crystalGreen.screenCenter();
-					crystalGreen.x -= 300;
-					crystalGreen.y += 300;
-					crystalBlue.screenCenter();
-					crystalBlue.x += 300;
-					crystalBlue.y += 300;
-					crystalViolet.screenCenter();
-
-					add(crystalRed);
-					add(crystalYellow);
-					add(crystalGreen);
-					add(crystalBlue);
-					add(crystalViolet);
-
-					crystalRed.animation.play('spin', true, Random.bool());
-					crystalYellow.animation.play('spin', true, Random.bool());
-					crystalGreen.animation.play('spin', true, Random.bool());
-					crystalBlue.animation.play('spin', true, Random.bool());
-					crystalViolet.animation.play('spin', true, Random.bool());
-
-					defaultCamZoom = 0.5;
-					FlxTween.tween(FlxG.camera, { zoom: defaultCamZoom }, 1, { startDelay: 0.5, ease: FlxEase.quadInOut });
-
-					new FlxTimer().start(2, function(tmr:FlxTimer) {
-						FlxTween.tween(crystalRed, { alpha: 1 }, 6, { startDelay: 2, ease: FlxEase.quadInOut });
-						FlxTween.tween(crystalYellow, { alpha: 1 }, 6, { startDelay: 2, ease: FlxEase.quadInOut });
-						FlxTween.tween(crystalGreen, { alpha: 1 }, 6, { startDelay: 2, ease: FlxEase.quadInOut });
-						FlxTween.tween(crystalBlue, { alpha: 1 }, 6, { startDelay: 2, ease: FlxEase.quadInOut });
-						FlxTween.tween(crystalViolet, { alpha: 1 }, 6, { startDelay: 2, ease: FlxEase.quadInOut });
-					});
-
-					new FlxTimer().start(12, function(lol:FlxTimer) {
-						var black:FlxSprite = new FlxSprite(-1000, -750).makeGraphic(FlxG.width * 3, FlxG.height * 3, FlxColor.BLACK);
-						black.scrollFactor.set();
-						black.alpha = 0;
-						add(black);
-						FlxTween.tween(black, {alpha: 1}, 2, {onComplete: function(twn:FlxTween) {
-							dialogue = CoolUtil.coolTextFile(Paths.txt('the-ups-and-downs/playAgainOnHard'));
-							dialogueIntro(dialogue, 'empty', false);
-						}, startDelay: 4});
-					});
-
-					//End of Cancer
-
-				} else {
-					endSong();
-				}
+				endSong();
 			}
 		}
 	}
@@ -4471,13 +4464,14 @@ class PlayState extends MusicBeatState
 			FlxTween.tween(shieldIcon, {alpha: 0.75}, 1);
 		} else {
 			FlxTimer.globalManager.completeAll();
+			FlxTween.cancelTweensOf(shieldIcon);
 			FlxTween.tween(shieldIcon, {alpha: 0.75}, 1);
 		}
 
 //		shieldTimer.amount = 1;
 		shieldOn = true;
 
-		new FlxTimer().start(10, function(fuck) {
+		new FlxTimer().start(5, function(fuck) {
 			shieldOn = false;
 			FlxTween.tween(shieldIcon, {alpha: 0}, 1);
 		});
@@ -4488,7 +4482,7 @@ class PlayState extends MusicBeatState
 //			FlxTween.tween(shieldIcon, {alpha: 0}, 1);
 //		}});
 
-		FlxG.sound.play(Paths.sound('shieldNote'), FlxG.random.float(0.7, 0.9));
+		FlxG.sound.play(Paths.sound('shieldNote'), FlxG.random.float(1.2, 1.5));
 
 		if (!note.isSustainNote)
 		{
@@ -4976,12 +4970,12 @@ class PlayState extends MusicBeatState
 							return arrayIDs[i];
 						}
 					case 3:
-						if(isStoryMode && storyPlaylist.length <= 1 && storyWeek == 2 && !changedDifficulty && !usedPractice && storyDifficulty == 3) {
+						if(isStoryMode && storyPlaylist.length <= 1 && storyWeek == 2 && !changedDifficulty && !usedPractice) {
 							Achievements.unlockAchievement(arrayIDs[i]);
 							return arrayIDs[i];
 						}
 					case 4:
-						if(isStoryMode && campaignMisses < 1 && songMisses < 1 && storyPlaylist.length <= 1 && storyWeek == 2 && !changedDifficulty && !usedPractice && storyDifficulty == 3) {
+						if(isStoryMode && campaignMisses < 1 && songMisses < 1 && storyPlaylist.length <= 1 && storyWeek == 2 && !changedDifficulty && !usedPractice) {
 							Achievements.unlockAchievement(arrayIDs[i]);
 							return arrayIDs[i];
 						}

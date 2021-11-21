@@ -14,8 +14,8 @@ class Achievements {
 		["Showstopper",					"Beat Violastro on Hard.",								false],
 		["Spectacular Play!",			"Beat Violastro on Hard with no Misses.",				true],
 		["*Synthetic Bwehehe*", 		"Beat \"The Ups and Downs\" on Hard.",					true],
-		["Onto the Venture!",			"Beat Vibrants on Hard.",								false],
-		["What a Vibrant Venture!",		"Beat Vibrants on Hard with no Misses.",				true],
+		["Onto the Venture!",			"Beat The Vibrants Week.",								false],
+		["What a Vibrant Venture!",		"Beat The Vibrants Week with no Misses.",				true],
 		["That must really hurt!",		"Hit a total of 100 Star Notes",						false]
 //		["Semag Collector",				"Collect all Coin Pieces",								true]
 	];

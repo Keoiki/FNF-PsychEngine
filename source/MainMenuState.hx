@@ -24,7 +24,7 @@ using StringTools;
 class MainMenuState extends MusicBeatState
 {
 	var psychEngineVersion:String = '0.1.2';
-	var violastroVersion:String = "3.1.0";
+	var violastroVersion:String = "3.2.0";
 	public static var curSelected:Int = 0;
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
@@ -112,7 +112,7 @@ class MainMenuState extends MusicBeatState
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
 
-		var modCreators:FlxText = new FlxText(FlxG.width - 213, FlxG.height - 158, 0, "Special Thanks:\nAJTweety\nMarkositta\nPepperMint\nTheFluxWizard\nviralbox\nBri The Cookie Monster\nTreejog\nBowtie Boy\nJecket\n", 12);
+		var modCreators:FlxText = new FlxText(FlxG.width - 213, FlxG.height - 168, 0, "Special Thanks:\nAJTweety\nMarkositta\nPepperMint\nTheFluxWizard\nviralbox\nBri The Cookie Monster\nTreejog\nBowtie Boy\nJecket\nCyratu\n", 12);
 		modCreators.scrollFactor.set();
 		modCreators.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(modCreators);
