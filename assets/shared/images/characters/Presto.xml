@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Presto.png">
+	<!-- Created with Adobe Animate version 22.0.0.93 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Presto Down Note0000" x="0" y="0" width="452" height="719" frameX="-33" frameY="-60" frameWidth="709" frameHeight="779"/>
+	<SubTexture name="Presto Down Note0001" x="0" y="0" width="452" height="719" frameX="-33" frameY="-60" frameWidth="709" frameHeight="779"/>
+	<SubTexture name="Presto Down Note0002" x="454" y="0" width="644" height="722" frameX="-26" frameY="-19" frameWidth="709" frameHeight="779"/>
+	<SubTexture name="Presto Down Note0003" x="454" y="0" width="644" height="722" frameX="-26" frameY="-19" frameWidth="709" frameHeight="779"/>
+	<SubTexture name="Presto Down Note0004" x="1100" y="0" width="709" height="723" frameX="0" frameY="0" frameWidth="709" frameHeight="779"/>
+	<SubTexture name="Presto Down Note0005" x="1100" y="0" width="709" height="723" frameX="0" frameY="0" frameWidth="709" frameHeight="779"/>
+	<SubTexture name="Presto Down Note0006" x="1811" y="0" width="661" height="762" frameX="-29" frameY="0" frameWidth="709" frameHeight="779"/>
+	<SubTexture name="Presto Down Note0007" x="1811" y="0" width="661" height="762" frameX="-29" frameY="0" frameWidth="709" frameHeight="779"/>
+	<SubTexture name="Presto Down Note0008" x="2474" y="0" width="593" height="740" frameX="-33" frameY="0" frameWidth="709" frameHeight="779"/>
+	<SubTexture name="Presto Down Note0009" x="2474" y="0" width="593" height="740" frameX="-33" frameY="0" frameWidth="709" frameHeight="779"/>
+	<SubTexture name="Presto Down Note0010" x="3069" y="0" width="600" height="741" frameX="-26" frameY="0" frameWidth="709" frameHeight="779"/>
+	<SubTexture name="Presto Down Note0011" x="3069" y="0" width="600" height="741" frameX="-26" frameY="0" frameWidth="709" frameHeight="779"/>
+	<SubTexture name="Presto Down Note0012" x="3671" y="0" width="626" height="723" frameX="0" frameY="0" frameWidth="709" frameHeight="779"/>
+	<SubTexture name="Presto Down Note0013" x="3671" y="0" width="626" height="723" frameX="0" frameY="0" frameWidth="709" frameHeight="779"/>
+	<SubTexture name="Presto Idle0000" x="4299" y="0" width="785" height="809" frameX="-59" frameY="-158" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Idle0001" x="4299" y="0" width="785" height="809" frameX="-59" frameY="-158" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Idle0002" x="5086" y="0" width="756" height="801" frameX="-79" frameY="-140" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Idle0003" x="5086" y="0" width="756" height="801" frameX="-79" frameY="-140" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Idle0004" x="5844" y="0" width="772" height="814" frameX="-58" frameY="-97" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Idle0005" x="5844" y="0" width="772" height="814" frameX="-58" frameY="-97" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Idle0006" x="6618" y="0" width="756" height="950" frameX="-73" frameY="0" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Idle0007" x="6618" y="0" width="756" height="950" frameX="-73" frameY="0" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Idle0008" x="7376" y="0" width="783" height="803" frameX="-54" frameY="-124" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Idle0009" x="7376" y="0" width="783" height="803" frameX="-54" frameY="-124" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Idle0010" x="0" y="952" width="769" height="805" frameX="-68" frameY="-124" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Idle0011" x="0" y="952" width="769" height="805" frameX="-68" frameY="-124" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Idle0012" x="771" y="952" width="837" height="787" frameX="0" frameY="-124" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Idle0013" x="771" y="952" width="837" height="787" frameX="0" frameY="-124" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Idle0014" x="1610" y="952" width="837" height="826" frameX="0" frameY="-124" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Idle0015" x="1610" y="952" width="837" height="826" frameX="0" frameY="-124" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Idle0016" x="2449" y="952" width="837" height="803" frameX="0" frameY="-124" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Idle0017" x="2449" y="952" width="837" height="803" frameX="0" frameY="-124" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Idle0018" x="3288" y="952" width="837" height="805" frameX="0" frameY="-124" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Idle0019" x="3288" y="952" width="837" height="805" frameX="0" frameY="-124" frameWidth="844" frameHeight="967"/>
+	<SubTexture name="Presto Left Note0000" x="4127" y="952" width="767" height="799" frameX="0" frameY="0" frameWidth="842" frameHeight="799"/>
+	<SubTexture name="Presto Left Note0001" x="4127" y="952" width="767" height="799" frameX="0" frameY="0" frameWidth="842" frameHeight="799"/>
+	<SubTexture name="Presto Left Note0002" x="4896" y="952" width="722" height="775" frameX="-87" frameY="-1" frameWidth="842" frameHeight="799"/>
+	<SubTexture name="Presto Left Note0003" x="4896" y="952" width="722" height="775" frameX="-87" frameY="-1" frameWidth="842" frameHeight="799"/>
+	<SubTexture name="Presto Left Note0004" x="5620" y="952" width="732" height="766" frameX="-99" frameY="-2" frameWidth="842" frameHeight="799"/>
+	<SubTexture name="Presto Left Note0005" x="5620" y="952" width="732" height="766" frameX="-99" frameY="-2" frameWidth="842" frameHeight="799"/>
+	<SubTexture name="Presto Left Note0006" x="6354" y="952" width="771" height="751" frameX="-71" frameY="-2" frameWidth="842" frameHeight="799"/>
+	<SubTexture name="Presto Left Note0007" x="6354" y="952" width="771" height="751" frameX="-71" frameY="-2" frameWidth="842" frameHeight="799"/>
+	<SubTexture name="Presto Left Note0008" x="7127" y="952" width="709" height="787" frameX="-107" frameY="-2" frameWidth="842" frameHeight="799"/>
+	<SubTexture name="Presto Left Note0009" x="7127" y="952" width="709" height="787" frameX="-107" frameY="-2" frameWidth="842" frameHeight="799"/>
+	<SubTexture name="Presto Left Note0010" x="0" y="1780" width="707" height="765" frameX="-107" frameY="-2" frameWidth="842" frameHeight="799"/>
+	<SubTexture name="Presto Left Note0011" x="0" y="1780" width="707" height="765" frameX="-107" frameY="-2" frameWidth="842" frameHeight="799"/>
+	<SubTexture name="Presto Left Note0012" x="709" y="1780" width="724" height="766" frameX="-107" frameY="-2" frameWidth="842" frameHeight="799"/>
+	<SubTexture name="Presto Left Note0013" x="709" y="1780" width="724" height="766" frameX="-107" frameY="-2" frameWidth="842" frameHeight="799"/>
+	<SubTexture name="Presto Right Note0000" x="1435" y="1780" width="439" height="779" frameX="0" frameY="0" frameWidth="770" frameHeight="802"/>
+	<SubTexture name="Presto Right Note0001" x="1435" y="1780" width="439" height="779" frameX="0" frameY="0" frameWidth="770" frameHeight="802"/>
+	<SubTexture name="Presto Right Note0002" x="1876" y="1780" width="629" height="765" frameX="-34" frameY="-16" frameWidth="770" frameHeight="802"/>
+	<SubTexture name="Presto Right Note0003" x="1876" y="1780" width="629" height="765" frameX="-34" frameY="-16" frameWidth="770" frameHeight="802"/>
+	<SubTexture name="Presto Right Note0004" x="2507" y="1780" width="639" height="746" frameX="-32" frameY="-17" frameWidth="770" frameHeight="802"/>
+	<SubTexture name="Presto Right Note0005" x="2507" y="1780" width="639" height="746" frameX="-32" frameY="-17" frameWidth="770" frameHeight="802"/>
+	<SubTexture name="Presto Right Note0006" x="3148" y="1780" width="708" height="780" frameX="-62" frameY="-22" frameWidth="770" frameHeight="802"/>
+	<SubTexture name="Presto Right Note0007" x="3148" y="1780" width="708" height="780" frameX="-62" frameY="-22" frameWidth="770" frameHeight="802"/>
+	<SubTexture name="Presto Right Note0008" x="3858" y="1780" width="704" height="757" frameX="-66" frameY="-22" frameWidth="770" frameHeight="802"/>
+	<SubTexture name="Presto Right Note0009" x="3858" y="1780" width="704" height="757" frameX="-66" frameY="-22" frameWidth="770" frameHeight="802"/>
+	<SubTexture name="Presto Right Note0010" x="4564" y="1780" width="712" height="759" frameX="-58" frameY="-22" frameWidth="770" frameHeight="802"/>
+	<SubTexture name="Presto Right Note0011" x="4564" y="1780" width="712" height="759" frameX="-58" frameY="-22" frameWidth="770" frameHeight="802"/>
+	<SubTexture name="Presto Right Note0012" x="5278" y="1780" width="738" height="741" frameX="-32" frameY="-22" frameWidth="770" frameHeight="802"/>
+	<SubTexture name="Presto Right Note0013" x="5278" y="1780" width="738" height="741" frameX="-32" frameY="-22" frameWidth="770" frameHeight="802"/>
+	<SubTexture name="Presto Up Note0000" x="6018" y="1780" width="686" height="759" frameX="0" frameY="-67" frameWidth="713" frameHeight="827"/>
+	<SubTexture name="Presto Up Note0001" x="6018" y="1780" width="686" height="759" frameX="0" frameY="-67" frameWidth="713" frameHeight="827"/>
+	<SubTexture name="Presto Up Note0002" x="6706" y="1780" width="676" height="827" frameX="-27" frameY="0" frameWidth="713" frameHeight="827"/>
+	<SubTexture name="Presto Up Note0003" x="6706" y="1780" width="676" height="827" frameX="-27" frameY="0" frameWidth="713" frameHeight="827"/>
+	<SubTexture name="Presto Up Note0004" x="7384" y="1780" width="640" height="807" frameX="-38" frameY="-11" frameWidth="713" frameHeight="827"/>
+	<SubTexture name="Presto Up Note0005" x="7384" y="1780" width="640" height="807" frameX="-38" frameY="-11" frameWidth="713" frameHeight="827"/>
+	<SubTexture name="Presto Up Note0006" x="0" y="2609" width="617" height="785" frameX="-69" frameY="-11" frameWidth="713" frameHeight="827"/>
+	<SubTexture name="Presto Up Note0007" x="0" y="2609" width="617" height="785" frameX="-69" frameY="-11" frameWidth="713" frameHeight="827"/>
+	<SubTexture name="Presto Up Note0008" x="619" y="2609" width="634" height="786" frameX="-69" frameY="-11" frameWidth="713" frameHeight="827"/>
+	<SubTexture name="Presto Up Note0009" x="619" y="2609" width="634" height="786" frameX="-69" frameY="-11" frameWidth="713" frameHeight="827"/>
+	<SubTexture name="Presto Up Note0010" x="1255" y="2609" width="644" height="768" frameX="-69" frameY="-11" frameWidth="713" frameHeight="827"/>
+	<SubTexture name="Presto Up Note0011" x="1255" y="2609" width="644" height="768" frameX="-69" frameY="-11" frameWidth="713" frameHeight="827"/>
+	<SubTexture name="Presto Up Note0012" x="1901" y="2609" width="609" height="807" frameX="-69" frameY="-11" frameWidth="713" frameHeight="827"/>
+	<SubTexture name="Presto Up Note0013" x="1901" y="2609" width="609" height="807" frameX="-69" frameY="-11" frameWidth="713" frameHeight="827"/>
+</TextureAtlas>

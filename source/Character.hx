@@ -15,6 +15,7 @@ class Character extends FlxSprite
 {
 	public var animOffsets:Map<String, Array<Dynamic>>;
 	public var debugMode:Bool = false;
+	public var noteSkin:String = 'vibrant';
 
 	public var isPlayer:Bool = false;
 	public var curCharacter:String = 'bf';
@@ -101,6 +102,8 @@ class Character extends FlxSprite
 				playAnim('idle');
 				flipX = true;
 
+				noteSkin = 'villainBF';
+
 			case 'gf-empty':
 				// GIRLFRIEND CODE
 				frames = Paths.getSparrowAtlas('characters/GF_assets');
@@ -186,6 +189,8 @@ class Character extends FlxSprite
 				playAnim('idle');
 				flipX = true;
 
+				noteSkin = 'villainBF';
+
 			case 'violastro':
 				frames = Paths.getSparrowAtlas('characters/violastro_assets');
 				quickAnimAdd('idle', 'Violastro Idle');
@@ -209,6 +214,8 @@ class Character extends FlxSprite
 				singDuration = 6.1;
 
 				playAnim('idle');
+
+				noteSkin = 'violastro';
 
 			case 'violastrobot':
 				frames = Paths.getSparrowAtlas('characters/violastrobot');
@@ -235,6 +242,8 @@ class Character extends FlxSprite
 				quickAnimAdd('riseUp', 'VioBot Rise Up');
 
 				playAnim('idle');
+				
+				noteSkin = 'violastro';
 
 			case 'violastrobotPlayer':
 				frames = Paths.getSparrowAtlas('characters/violastrobot');
@@ -262,6 +271,8 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 //				flipX = true;
+				
+				noteSkin = 'villainBF';
 
 			case 'viobot-dancin':
 				frames = Paths.getSparrowAtlas('characters/violastrobot_dancin');
@@ -343,6 +354,39 @@ class Character extends FlxSprite
 				playAnim('idle');
 				singDuration = 5;
 
+			case 'presto':
+				frames = Paths.getSparrowAtlas('characters/Presto');
+//				quickAnimAdd('idle', 'Presto Idle');
+//				animation.addByIndices('idleHair', 'Presto Idle', [16, 17, 18, 19], "", 24, true);
+//				quickAnimAdd('singLEFT', 'Presto Left Note');
+//				quickAnimAdd('singDOWN', 'Presto Down Note');
+//				quickAnimAdd('singUP', 'Presto Up Note');
+//				quickAnimAdd('singRIGHT', 'Presto Right Note');
+
+				animation.addByIndices('idle', 'Presto Idle', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "", 24, false);
+				animation.addByIndices('idleHair', 'Presto Idle', [12, 13, 14, 15, 16, 17, 18, 19], "", 24, true);
+				
+				quickAnimAdd('singLEFT', 'Presto Left Note');
+				animation.addByIndices('singLEFT-start', 'Presto Left Note', [0, 1], "", 24, false);
+				animation.addByIndices('singLEFT-loop', 'Presto Left Note', [2, 3, 4, 5], "", 24, false);
+
+				quickAnimAdd('singDOWN', 'Presto Down Note');
+				animation.addByIndices('singDOWN-start', 'Presto Down Note', [0, 1], "", 24, false);
+				animation.addByIndices('singDOWN-loop', 'Presto Down Note', [2, 3, 4, 5], "", 24, false);
+
+				quickAnimAdd('singUP', 'Presto Up Note');
+				animation.addByIndices('singUP-start', 'Presto Up Note', [0, 1], "", 24, false);
+				animation.addByIndices('singUP-loop', 'Presto Up Note', [2, 3, 4, 5], "", 24, false);
+
+				quickAnimAdd('singRIGHT', 'Presto Right Note');
+				animation.addByIndices('singRIGHT-start', 'Presto Right Note', [0, 1], "", 24, false);
+				animation.addByIndices('singRIGHT-loop', 'Presto Right Note', [2, 3, 4, 5], "", 24, false);
+
+				playAnim('idle');
+				singDuration = 5;
+
+				noteSkin = 'violastro';
+
 			case 'psychic':
 				frames = Paths.getSparrowAtlas('characters/Psychic');
 				quickAnimAdd('idle', 'PSYCHIC IDLE');
@@ -358,18 +402,15 @@ class Character extends FlxSprite
 				quickAnimAdd('ability', 'PSYCHIC POWERS');
 				singDuration = 4.4;
 
-/*
 			case 'duo-bfgf':
-				frames = Paths.getSparrowAtlas('characters/violastro_assets');
-				quickAnimAdd('idle', 'Violastro Idle');
+				noteSkin = 'villainBF';
 
-				visible = false;
-
-				playAnim('idle');
-*/
+			case 'duo-viobotgf':
+				noteSkin = 'villainBF';
 		}
 
-		loadOffsetFile(curCharacter, library);
+		if (!curCharacter.startsWith('duo'))
+			loadOffsetFile(curCharacter, library);
 
 		dance();
 
@@ -434,7 +475,7 @@ class Character extends FlxSprite
 				case 'gf':
 					if (animation.curAnim.name == 'hairFall' && animation.curAnim.finished)
 						playAnim('danceRight');
-				case 'bf-car' | 'mom-car' | 'violastrobot' | 'psychic' | 'pgf-vio':
+				case 'bf-car' | 'mom-car' | 'violastrobot' | 'psychic' | 'pgf-vio' | 'presto':
 					if(animation.curAnim.finished) {
 						if(animation.curAnim.name == 'idle')
 							playAnim('idleHair');
@@ -445,7 +486,7 @@ class Character extends FlxSprite
 					}
 			}
 			switch (curCharacter) {
-				case 'violastro' | 'violastrobot': {
+				case 'violastro' | 'violastrobot' | 'presto': {
 					if (animation.curAnim.finished) {
 						switch (animation.curAnim.name) {
 							case 'singLEFT':

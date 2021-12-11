@@ -12,11 +12,12 @@ using StringTools;
 class Achievements {
 	public static var achievementsStuff:Array<Dynamic> = [ //Name, Description, Hidden achievement
 		["Showstopper",					"Beat Violastro on Hard.",								false],
-		["Spectacular Play!",			"Beat Violastro on Hard with no Misses.",				true],
-		["*Synthetic Bwehehe*", 		"Beat \"The Ups and Downs\" on Hard.",					true],
+		["Spectacular Play!",			"Beat Violastro on Hard with no Misses.",				false],
+		["*Synthetic Bwehehe*", 		"Beat \"The Ups and Downs\" on Hard.",					false],
 		["Onto the Venture!",			"Beat The Vibrants Week.",								false],
-		["What a Vibrant Venture!",		"Beat The Vibrants Week with no Misses.",				true],
-		["That must really hurt!",		"Hit a total of 100 Star Notes",						false]
+		["What a Vibrant Venture!",		"Beat The Vibrants Week with no Misses.",				false],
+		["Presto Tempo!",				"Beat Presto's Song.",									false],
+		["That must really hurt!",		"Hit a total of 100 Stars",								false]
 //		["Semag Collector",				"Collect all Coin Pieces",								true]
 	];
 
@@ -26,8 +27,9 @@ class Achievements {
 		['vv_upsdowns', false], 			//2
 		['vv_vibrants', false], 			//3
 		['vv_vibrants_nomiss', false], 		//4
-		['vv_star_notes', false]			//5
-//		['vv_coin_pieces', false]			//6
+		['vv_presto', false],				//5
+		['vv_star_notes', false]			//6
+//		['vv_coin_pieces', false]			//7
 	];
 
 //	public static var henchmenDeath:Int = 0;

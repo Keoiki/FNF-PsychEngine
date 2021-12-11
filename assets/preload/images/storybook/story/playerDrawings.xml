@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="playerDrawings.png">
+	<!-- Created with Adobe Animate version 22.0.0.93 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="storyDrawingPlayer0000" x="0" y="0" width="269" height="219"/>
+	<SubTexture name="storyDrawingPlayer0001" x="0" y="219" width="254" height="193" frameX="-2" frameY="-23" frameWidth="269" frameHeight="219"/>
+</TextureAtlas>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="allAwards.png">
+	<!-- Created with Adobe Animate version 22.0.0.93 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="AllAwards0000" x="0" y="0" width="320" height="120"/>
+	<SubTexture name="AllAwards0001" x="322" y="0" width="320" height="120"/>
+	<SubTexture name="AllAwards0002" x="644" y="0" width="320" height="120"/>
+	<SubTexture name="AllAwards0003" x="0" y="122" width="320" height="120"/>
+	<SubTexture name="AllAwards0004" x="322" y="122" width="320" height="120"/>
+	<SubTexture name="AllAwards0005" x="644" y="122" width="320" height="120"/>
+	<SubTexture name="AllAwards0006" x="0" y="244" width="320" height="120"/>
+	<SubTexture name="AllAwards0007" x="322" y="244" width="320" height="120"/>
+</TextureAtlas>

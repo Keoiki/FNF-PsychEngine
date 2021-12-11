@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="opponentDrawings.png">
+	<!-- Created with Adobe Animate version 22.0.0.93 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="storyDrawingOpponent0000" x="0" y="0" width="272" height="185" frameX="0" frameY="0" frameWidth="285" frameHeight="185"/>
+	<SubTexture name="storyDrawingOpponent0001" x="0" y="185" width="277" height="164" frameX="-8" frameY="-12" frameWidth="285" frameHeight="185"/>
+</TextureAtlas>

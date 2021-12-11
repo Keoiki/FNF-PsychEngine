@@ -3,6 +3,7 @@ dad
 gf
 violastro
 gf-viobot
+gf-pillow
 bf-shades
 violastrobot
 viobot-dancin
@@ -17,4 +18,5 @@ pgf-vio
 duo-viobotgf
 duo-bfgf
 gf-empty
+presto
 psychic

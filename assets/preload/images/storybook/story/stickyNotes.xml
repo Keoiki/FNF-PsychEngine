@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="stickyNotes.png">
+	<!-- Created with Adobe Animate version 22.0.0.93 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="StickyNote0000" x="0" y="0" width="212" height="167"/>
+	<SubTexture name="StickyNote0001" x="214" y="0" width="212" height="167"/>
+</TextureAtlas>

@@ -63,6 +63,9 @@ class ChartingState extends MusicBeatState
 		['Change Camera Zoom', "Changes the zoom of the camera,\nthe higher the value,\nthe closer it will zoom.\nValue 1: Zoom value, Value 2: Time."],
 		['Center Camera', 'Centers the camera on GF\'s x position.\nValue 1: Toggle off (0), on (1)'],
 		['Hide Health', 'Covers up the health bar anc moves the icons aside.\nIf already on, reverses the effect, showing your health.'],
+		['Move Note X', 'Moves a strum note\'s X position.\nValue 1: Strum Note 0-3 (Player Only)\nValue 2: Amount.'],
+		['Move Note Y', 'Moves a strum note\'s Y position.\nValue 1: Strum Note 0-3 (Player Only)\nValue 2: Amount.'],
+		['Note Alpha', 'Changes a strum note\'s Alpha value.\nApplies to all notes in that column.\nValue 1: Strum Note 0-3 (Player Only)\nValue 2: Opacity.'],
 		['Change Scroll Speed', "Value 1: Speed to which set the scroll speed."]
 	];
 
@@ -1359,8 +1362,9 @@ class ChartingState extends MusicBeatState
 		var daStrumTime = i[0];
 		var daSus:Dynamic = i[2];
 		var daType:Dynamic = i[3];
+		var daSkin:Dynamic = i[4];
 
-		var note:Note = new Note(daStrumTime, daNoteInfo % 4, null, null, true);
+		var note:Note = new Note(daStrumTime, daNoteInfo % 4, null, null, true, daSkin);
 		if(daNoteInfo > -1) { //Common note
 			note.sustainLength = daSus;
 			note.noteType = daType;

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="cardinal_disappointed.png">
+	<!-- Created with Adobe Animate version 22.0.0.93 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Cardinal Disappointed0000" x="0" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0001" x="0" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0002" x="0" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0003" x="0" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0004" x="0" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0005" x="0" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0006" x="0" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0007" x="0" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0008" x="0" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0009" x="0" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0010" x="0" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0011" x="0" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0012" x="0" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0013" x="0" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0014" x="422" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0015" x="422" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0016" x="422" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0017" x="422" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0018" x="422" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0019" x="422" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0020" x="422" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0021" x="422" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0022" x="422" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0023" x="422" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0024" x="422" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0025" x="422" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0026" x="422" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0027" x="844" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0028" x="844" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0029" x="844" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0030" x="844" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0031" x="844" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0032" x="844" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0033" x="844" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0034" x="844" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0035" x="844" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0036" x="1266" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0037" x="1266" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0038" x="1266" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0039" x="1266" y="0" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0040" x="0" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0041" x="0" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0042" x="0" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed0043" x="0" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0000" x="422" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0001" x="422" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0002" x="422" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0003" x="422" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0004" x="422" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0005" x="422" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0006" x="422" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0007" x="422" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0008" x="422" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0009" x="422" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0010" x="422" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0011" x="422" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0012" x="422" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0013" x="422" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0014" x="422" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0015" x="422" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0016" x="422" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0017" x="844" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0018" x="844" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0019" x="844" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0020" x="844" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0021" x="844" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0022" x="844" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0023" x="844" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0024" x="844" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0025" x="844" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0026" x="844" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0027" x="844" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0028" x="844" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0029" x="844" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0030" x="844" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0031" x="844" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0032" x="844" y="668" width="420" height="666"/>
+	<SubTexture name="Cardinal Disappointed Loop0033" x="844" y="668" width="420" height="666"/>
+</TextureAtlas>

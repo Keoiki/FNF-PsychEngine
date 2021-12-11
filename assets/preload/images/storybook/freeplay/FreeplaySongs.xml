@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="FreeplaySongs.png">
+	<!-- Created with Adobe Animate version 22.0.0.93 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="SongNames0000" x="0" y="0" width="330" height="80" frameX="-5" frameY="-3" frameWidth="353" frameHeight="91"/>
+	<SubTexture name="SongNames0001" x="332" y="0" width="327" height="79" frameX="-3" frameY="-1" frameWidth="353" frameHeight="91"/>
+	<SubTexture name="SongNames0002" x="661" y="0" width="316" height="78" frameX="-15" frameY="-1" frameWidth="353" frameHeight="91"/>
+	<SubTexture name="SongNames0003" x="0" y="82" width="353" height="78" frameX="0" frameY="-5" frameWidth="353" frameHeight="91"/>
+	<SubTexture name="SongNames0004" x="355" y="82" width="324" height="81" frameX="-4" frameY="0" frameWidth="353" frameHeight="91"/>
+	<SubTexture name="SongNames0005" x="681" y="82" width="313" height="79" frameX="-15" frameY="-4" frameWidth="353" frameHeight="91"/>
+	<SubTexture name="SongNames0006" x="0" y="165" width="325" height="90" frameX="-1" frameY="-1" frameWidth="353" frameHeight="91"/>
+	<SubTexture name="SongNames0007" x="327" y="165" width="307" height="71" frameX="-14" frameY="-11" frameWidth="353" frameHeight="91"/>
+</TextureAtlas>

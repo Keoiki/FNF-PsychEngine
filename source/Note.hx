@@ -1,5 +1,6 @@
 package;
 
+import Song.SwagSong;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.graphics.frames.FlxAtlasFrames;
@@ -42,7 +43,7 @@ class Note extends FlxSprite
 
 	private var daStage:String = PlayState.curStage;
 
-	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?inEditor:Bool = false)
+	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?inEditor:Bool = false, ?noteSkin:String = 'vibrant')
 	{
 		super();
 
@@ -62,60 +63,50 @@ class Note extends FlxSprite
 
 		this.noteData = noteData;
 
-		switch (daStage)
-		{
-			case 'school' | 'schoolEvil':
-				loadGraphic(Paths.image('weeb/pixelUI/arrows-pixels'), true, 17, 17);
-
-				animation.add('greenScroll', [GREEN_NOTE + 4]);
-				animation.add('redScroll', [RED_NOTE + 4]);
-				animation.add('blueScroll', [BLUE_NOTE + 4]);
-				animation.add('purpleScroll', [PURP_NOTE + 4]);
-
-				if (isSustainNote)
-				{
-					loadGraphic(Paths.image('weeb/pixelUI/arrowEnds'), true, 7, 6);
-
-					animation.add('purpleholdend', [PURP_NOTE + 4]);
-					animation.add('greenholdend', [GREEN_NOTE + 4]);
-					animation.add('redholdend', [RED_NOTE + 4]);
-					animation.add('blueholdend', [BLUE_NOTE + 4]);
-
-					animation.add('purplehold', [PURP_NOTE]);
-					animation.add('greenhold', [GREEN_NOTE]);
-					animation.add('redhold', [RED_NOTE]);
-					animation.add('bluehold', [BLUE_NOTE]);
-				}
-
-				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
-				updateHitbox();
-
-			default: {
-				frames = Paths.getSparrowAtlas('NOTE_assets_WeekViolastro');
-
-				animation.addByPrefix('greenScroll', 'green0');
-				animation.addByPrefix('redScroll', 'red0');
-				animation.addByPrefix('blueScroll', 'blue0');
-				animation.addByPrefix('purpleScroll', 'purple0');
-
-				if (isSustainNote)
-				{
-					animation.addByPrefix('purpleholdend', 'pruple end hold');
-					animation.addByPrefix('greenholdend', 'green hold end');
-					animation.addByPrefix('redholdend', 'red hold end');
-					animation.addByPrefix('blueholdend', 'blue hold end');
-
-					animation.addByPrefix('purplehold', 'purple hold piece');
-					animation.addByPrefix('greenhold', 'green hold piece');
-					animation.addByPrefix('redhold', 'red hold piece');
-					animation.addByPrefix('bluehold', 'blue hold piece');
-				}
-
-				setGraphicSize(Std.int(width * 0.7));
-				updateHitbox();
-				antialiasing = ClientPrefs.globalAntialiasing;
+		//Bob and Bosip source code saved me here.
+		if (!inEditor) {
+			frames = Paths.getSparrowAtlas(noteSkin + 'Notes');	
+			animation.addByPrefix('greenScroll', 'green0');
+			animation.addByPrefix('redScroll', 'red0');
+			animation.addByPrefix('blueScroll', 'blue0');
+			animation.addByPrefix('purpleScroll', 'purple0');
+	
+			if (isSustainNote)
+			{
+				animation.addByPrefix('purpleholdend', 'pruple end hold');
+				animation.addByPrefix('greenholdend', 'green hold end');
+				animation.addByPrefix('redholdend', 'red hold end');
+				animation.addByPrefix('blueholdend', 'blue hold end');
+	
+				animation.addByPrefix('purplehold', 'purple hold piece');
+				animation.addByPrefix('greenhold', 'green hold piece');
+				animation.addByPrefix('redhold', 'red hold piece');
+				animation.addByPrefix('bluehold', 'blue hold piece');
+			}
+		} else {
+			frames = Paths.getSparrowAtlas('vibrantNotes');	
+			animation.addByPrefix('greenScroll', 'green0');
+			animation.addByPrefix('redScroll', 'red0');
+			animation.addByPrefix('blueScroll', 'blue0');
+			animation.addByPrefix('purpleScroll', 'purple0');
+	
+			if (isSustainNote)
+			{
+				animation.addByPrefix('purpleholdend', 'pruple end hold');
+				animation.addByPrefix('greenholdend', 'green hold end');
+				animation.addByPrefix('redholdend', 'red hold end');
+				animation.addByPrefix('blueholdend', 'blue hold end');
+	
+				animation.addByPrefix('purplehold', 'purple hold piece');
+				animation.addByPrefix('greenhold', 'green hold piece');
+				animation.addByPrefix('redhold', 'red hold piece');
+				animation.addByPrefix('bluehold', 'blue hold piece');
 			}
 		}
+		
+		setGraphicSize(Std.int(width * 0.7));
+		updateHitbox();
+		antialiasing = ClientPrefs.globalAntialiasing;
 
 		if (noteType == 3) {
 			loadGraphic(Paths.image('starNote'));
@@ -154,8 +145,10 @@ class Note extends FlxSprite
 		if (isSustainNote && prevNote != null)
 		{
 			alpha = 0.6;
-			if(ClientPrefs.downScroll) angle = 180;
-
+			if (ClientPrefs.downScroll) {
+				flipY = true;
+			}
+			
 			x += width / 2;
 
 			noteType = prevNote.noteType;
@@ -213,7 +206,11 @@ class Note extends FlxSprite
 						setGraphicSize(Std.int(width * PlayState.daPixelZoom));
 					}
 					default: {
-						loadGraphic(Paths.image('starNote'));
+						if (PlayState.storyWeek == 1 || PlayState.SONG.song == 'Presto' || PlayState.SONG.song == 'Harmony (Violastro Mix)') {
+							loadGraphic(Paths.image('starNote'));
+						} else {
+							loadGraphic(Paths.image('simulNote'));
+						}
 						setGraphicSize(Std.int(width * 0.7));
 						antialiasing = ClientPrefs.globalAntialiasing;
 					}

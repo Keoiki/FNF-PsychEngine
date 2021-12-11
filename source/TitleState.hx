@@ -299,7 +299,7 @@ class TitleState extends MusicBeatState
 
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
-				FlxG.switchState(new MainMenuState());
+				FlxG.switchState(new StoryBookState(0));
 			});
 			// FlxG.sound.play(Paths.music('titleShoot'), 0.7);
 		}
@@ -313,6 +313,11 @@ class TitleState extends MusicBeatState
 		{
 			if(controls.UI_LEFT) swagShader.updateAdd(36 * -elapsed);
 			if(controls.UI_RIGHT) swagShader.updateAdd(36 * elapsed);
+		}
+
+		if (controls.BACK)
+		{
+			FlxG.switchState(new NullScene());
 		}
 
 		super.update(elapsed);

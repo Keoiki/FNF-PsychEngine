@@ -226,7 +226,7 @@ class MainMenuState extends MusicBeatState
 
 		if (FlxG.keys.justPressed.SEVEN) {
 			selectedSomethin = true;
-			MusicBeatState.switchState(new StoryBookState());
+			MusicBeatState.switchState(new StoryBookState(0));
 		}
 
 		menuItems.forEach(function(spr:FlxSprite)
